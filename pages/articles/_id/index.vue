@@ -35,7 +35,7 @@ export default {
   data: () => ({
     article: null
   }),
-  async created() {
+  async mounted() {
     try {
       const res = await this.$axios.get(`/articles/${this.$route.params.id}`);
       this.article = res.data;

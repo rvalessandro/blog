@@ -52,6 +52,12 @@
 
           <div id="preview" class="w-full text-gray-700">
             <div v-html="$md.render(article.preview)"></div>
+            <span
+              class="text-blue-600 text-sm float-right -mt-2 cursor-pointer hover:underline hover:text-blue-700"
+              @click="goToDetail(article)"
+            >
+              Read more
+            </span>
           </div>
         </div>
       </div>
