@@ -2,14 +2,14 @@
   <div class="container mx-auto">
     <div id="categories" class="w-full flex flex-wrap justify-center">
       <div
-        class="mx-6 mt-4 bg-gray-200 text-gray-600 px-6 py-2 text-sm font-semibold rounded cursor-pointer transform hover:scale-105 transition ease-in duration-75"
+        class="mx-6 mt-4 bg-gray-200 text-gray-600 px-6 py-2 text-sm font-semibold rounded cursor-pointer transition ease-in duration-75"
       >
         All
       </div>
       <div
         v-for="category in categories"
         :key="category.id"
-        class="mx-6 mt-4 bg-gray-200 text-gray-600 px-6 py-2 text-sm font-semibold rounded cursor-pointer transform hover:scale-105 transition ease-in duration-75"
+        class="mx-6 mt-4 hover:bg-gray-200 text-gray-600 px-6 py-2 text-sm font-semibold rounded cursor-pointer transition ease-in duration-75"
       >
         <span> {{ category.name }} </span>
       </div>
@@ -24,6 +24,7 @@
         <h1
           id="article-title"
           class="text-3xl font-semibold text-gray-700 mb-3 cursor-pointer transition-all ease-in duration-75 hover:underline"
+          @click="goToDetail(article)"
         >
           {{ article.title }}
         </h1>
@@ -85,9 +86,12 @@ export default {
         console.log("Err:", err);
       }
     },
+    goToDetail(article) {
+      this.$router.push(`/articles/${article.id}`);
+    },
 
-    formatDate() {
-      const d = new Date("2010-08-05");
+    formatDate(date) {
+      const d = new Date(date);
       const ye = new Intl.DateTimeFormat("en", { year: "numeric" }).format(d);
       const mo = new Intl.DateTimeFormat("en", { month: "short" }).format(d);
       const da = new Intl.DateTimeFormat("en", { day: "2-digit" }).format(d);
