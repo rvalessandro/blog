@@ -59,13 +59,22 @@ export default {
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    "@nuxtjs/axios"
+    "@nuxtjs/axios",
+    "@nuxtjs/markdownit"
   ],
+  markdownit: {
+    preset: "default",
+    linkify: true,
+    breaks: true,
+    injected: true
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    baseURL: "http://localhost:1337"
+  },
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/

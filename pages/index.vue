@@ -1,10 +1,108 @@
 <template>
-  <div></div>
+  <div class="container mx-auto">
+    <div id="categories" class="w-full flex flex-wrap justify-center">
+      <div
+        class="mx-6 mt-4 bg-gray-200 text-gray-600 px-6 py-2 text-sm font-semibold rounded cursor-pointer transform hover:scale-105 transition ease-in duration-75"
+      >
+        All
+      </div>
+      <div
+        v-for="category in categories"
+        :key="category.id"
+        class="mx-6 mt-4 bg-gray-200 text-gray-600 px-6 py-2 text-sm font-semibold rounded cursor-pointer transform hover:scale-105 transition ease-in duration-75"
+      >
+        <span> {{ category.name }} </span>
+      </div>
+    </div>
+
+    <div
+      id="articles"
+      class="mt-12 flex flex-col mx-auto"
+      style="max-width: 44rem"
+    >
+      <div v-for="article in articles" :key="article.id" class="mb-8">
+        <h1
+          id="article-title"
+          class="text-3xl font-semibold text-gray-700 mb-3 cursor-pointer transition-all ease-in duration-75 hover:underline"
+        >
+          {{ article.title }}
+        </h1>
+
+        <div id="details" class="flex">
+          <div id="left-column" class="w-64" style="min-width: 14rem">
+            <div class="categories flex flex-wrap">
+              <div
+                v-for="category in article.categories"
+                :key="category.id"
+                class="mb-6 mr-4"
+              >
+                <span
+                  class="text-sm text-gray-700 pb-2 border-b-2 border-blue-500"
+                >
+                  {{ category.name }}
+                </span>
+              </div>
+            </div>
+
+            <span class="text-sm text-gray-600">
+              {{ formatDate(article.created_at) }}
+            </span>
+          </div>
+
+          <div id="preview" class="w-full text-gray-700">
+            <div v-html="$md.render(article.preview)"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data: () => ({
+    articles: null,
+    categories: null
+  }),
+  async created() {
+    this.fetchArticles();
+    this.fetchCategories();
+  },
+  methods: {
+    async fetchArticles() {
+      try {
+        const res = await this.$axios.get("/articles");
+        this.articles = res.data;
+      } catch (err) {
+        console.log("Err:", err);
+      }
+    },
+    async fetchCategories() {
+      try {
+        const res = await this.$axios.get("/categories");
+        this.categories = res.data;
+      } catch (err) {
+        console.log("Err:", err);
+      }
+    },
+
+    formatDate() {
+      const d = new Date("2010-08-05");
+      const ye = new Intl.DateTimeFormat("en", { year: "numeric" }).format(d);
+      const mo = new Intl.DateTimeFormat("en", { month: "short" }).format(d);
+      const da = new Intl.DateTimeFormat("en", { day: "2-digit" }).format(d);
+
+      return `${mo} ${da}, ${ye}`;
+    }
+  }
+};
 </script>
 
 <style>
+h1#article-title:hover {
+  transform: scale(1.01) !important;
+}
+#preview p {
+  margin-bottom: 1.25rem;
+}
 </style>

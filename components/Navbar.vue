@@ -5,20 +5,23 @@
 
       <ul class="font-sans tracking-wider">
         <nuxt-link
-          to="/blog"
+          to="/"
           class="mx-4 uppercase text-sm font-semibold text-gray-600"
-          >blog</nuxt-link
         >
+          blog
+        </nuxt-link>
         <nuxt-link
-          to="/blog"
+          to="/projects"
           class="mx-4 uppercase text-sm font-semibold text-gray-600"
-          >projects</nuxt-link
         >
+          projects
+        </nuxt-link>
         <nuxt-link
-          to="/blog"
+          to="/about"
           class="mx-4 uppercase text-sm font-semibold text-gray-600"
-          >about</nuxt-link
         >
+          about
+        </nuxt-link>
       </ul>
     </div>
   </nav>
@@ -28,4 +31,8 @@
 export default {};
 </script>
 
-<style></style>
+<style lang="css" scoped>
+a.nuxt-link-active.nuxt-link-exact-active {
+  color: #3182ce;
+}
+</style>
