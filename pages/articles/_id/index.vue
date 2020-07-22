@@ -78,4 +78,13 @@ export default {
   font-size: 1rem;
   color: #2d3748;
 }
+
+.content ul {
+  margin-bottom: 1.25rem;
+  margin-left: 1.5rem;
+}
+.content li {
+  list-style-type: disc;
+  margin-bottom: 0.5rem;
+}
 </style>
