@@ -3,7 +3,7 @@
     <div class="flex justify-between items-center h-full w-full">
       <div></div>
 
-      <ul class="font-sans tracking-wider">
+      <ul class="font-sans tracking-wider flex">
         <nuxt-link
           to="/"
           class="mx-4 uppercase text-sm font-semibold text-gray-600"
