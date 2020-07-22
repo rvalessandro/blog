@@ -96,32 +96,18 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from "vuex";
+
 export default {
-  data: () => ({
-    articles: null,
-    categories: null
-  }),
+  computed: {
+    ...mapGetters(["articles", "categories"])
+  },
   async created() {
     this.fetchArticles();
     this.fetchCategories();
   },
   methods: {
-    async fetchArticles() {
-      try {
-        const res = await this.$axios.get("/articles");
-        this.articles = res.data;
-      } catch (err) {
-        console.log("Err:", err);
-      }
-    },
-    async fetchCategories() {
-      try {
-        const res = await this.$axios.get("/categories");
-        this.categories = res.data;
-      } catch (err) {
-        console.log("Err:", err);
-      }
-    },
+    ...mapActions(["fetchArticles", "fetchCategories"]),
     goToDetail(article) {
       this.$router.push(`/articles/${article.id}`);
     },

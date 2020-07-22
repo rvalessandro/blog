@@ -31,19 +31,30 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from "vuex";
+
 export default {
-  data: () => ({
-    article: null
-  }),
-  async mounted() {
-    try {
-      const res = await this.$axios.get(`/articles/${this.$route.params.id}`);
-      this.article = res.data;
-    } catch (err) {
-      console.log("Err:", err);
+  computed: {
+    ...mapGetters(["articles"]),
+    article: function() {
+      let article = null;
+
+      if (this.articles) {
+        article = this.articles.find(
+          article => article.id == this.$route.params.id
+        );
+      }
+
+      article = this.$store.getters["article"];
+
+      return article;
     }
   },
+  created() {
+    this.fetchArticle(this.$route.params.id);
+  },
   methods: {
+    ...mapActions(["fetchArticle"]),
     formatDate(date) {
       const d = new Date(date);
       const ye = new Intl.DateTimeFormat("en", { year: "numeric" }).format(d);
