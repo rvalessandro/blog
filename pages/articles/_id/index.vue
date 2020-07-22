@@ -87,4 +87,10 @@ export default {
   list-style-type: disc;
   margin-bottom: 0.5rem;
 }
+
+blockquote {
+  box-shadow: inset 3px 0 0 0 rgba(41, 41, 41, 1);
+  margin-left: -1rem;
+  padding-left: 1rem;
+}
 </style>
