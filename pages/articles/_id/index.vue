@@ -38,19 +38,17 @@ export default {
     article: null
   }),
   computed: {
-    ...mapGetters(["articles"]),
-    article: function() {}
+    ...mapGetters(["articles"])
   },
-  created() {
+  async created() {
     let article = null;
 
     if (this.articles) {
       article = this.articles.find(
         article => article.id == this.$route.params.id
       );
-    }
-    if (!article) {
-      this.fetchArticle(this.$route.params.id);
+    } else {
+      await this.fetchArticle(this.$route.params.id);
       article = this.$store.getters["article"];
     }
 
