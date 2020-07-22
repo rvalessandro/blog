@@ -10,7 +10,7 @@ const getters = {
 
 const actions = {
   async fetchArticles({ commit }) {
-    const response = await this.$axios.get("/articles");
+    const response = await this.$axios.get("/articles?_sort=id:DESC");
     commit("setArticles", response.data);
   },
   async fetchArticle({ commit }, articleId) {
