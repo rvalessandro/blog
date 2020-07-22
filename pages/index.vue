@@ -20,10 +20,10 @@
 
     <div
       id="articles"
-      class="mt-8 md:mt-12 flex flex-col mx-auto"
+      class="mt-6 md:mt-12 flex flex-col mx-auto"
       style="max-width: 44rem"
     >
-      <div v-for="article in articles" :key="article.id" class="mb-8">
+      <div v-for="article in articles" :key="article.id" class="mb-10 md:mb-4">
         <h1
           id="article-title"
           class="text-3xl font-semibold text-gray-700 mb-3 cursor-pointer transition-all ease-in duration-75 hover:underline"
@@ -35,7 +35,7 @@
         <div id="details" class="flex flex-col md:flex-row">
           <div
             id="left-column"
-            class="w-full md:w-64 flex"
+            class="w-full flex md:w-64 md:flex-col"
             style="min-width: 14rem"
           >
             <div class="flex flex-wrap w-full">
