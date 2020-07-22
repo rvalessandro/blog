@@ -1,7 +1,7 @@
 <template>
   <div>
     <Navbar />
-    <Nuxt />
+    <Nuxt class="container mx-auto px-8 sm:px-0 pb-8" />
   </div>
 </template>
 

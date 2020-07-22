@@ -1,6 +1,9 @@
 <template>
-  <div class="container mx-auto">
-    <div id="categories" class="w-full flex flex-wrap justify-center">
+  <div class="">
+    <div
+      id="categories"
+      class="w-full flex flex-wrap justify-evenly -ml-4 -mr-4 md:ml-0 md:mr-0 md:justify-center"
+    >
       <div
         class="mx-6 mt-4 bg-gray-200 text-gray-600 px-6 py-2 text-sm font-semibold rounded cursor-pointer transition ease-in duration-75"
       >
@@ -17,7 +20,7 @@
 
     <div
       id="articles"
-      class="mt-12 flex flex-col mx-auto"
+      class="mt-8 md:mt-12 flex flex-col mx-auto"
       style="max-width: 44rem"
     >
       <div v-for="article in articles" :key="article.id" class="mb-8">
@@ -29,35 +32,41 @@
           {{ article.title }}
         </h1>
 
-        <div id="details" class="flex">
-          <div id="left-column" class="w-64" style="min-width: 14rem">
-            <div class="categories flex flex-wrap">
+        <div id="details" class="flex flex-col md:flex-row">
+          <div
+            id="left-column"
+            class="w-full md:w-64 flex"
+            style="min-width: 14rem"
+          >
+            <div class="flex flex-wrap w-full">
               <div
                 v-for="category in article.categories"
                 :key="category.id"
                 class="mb-6 mr-4"
               >
                 <span
-                  class="text-sm text-gray-700 pb-2 border-b-2 border-blue-500"
+                  class="text-sm text-gray-70 pb-2 border-b-2 border-blue-500"
                 >
                   {{ category.name }}
                 </span>
               </div>
             </div>
 
-            <span class="text-sm text-gray-600">
+            <span class="text-sm text-gray-600 w-32">
               {{ formatDate(article.created_at) }}
             </span>
           </div>
 
-          <div id="preview" class="w-full text-gray-700">
+          <div id="preview" class="w-full text-gray-700 mt-1 sm:mt-0">
             <div v-html="$md.render(article.preview)"></div>
-            <span
-              class="text-blue-600 text-sm float-right -mt-2 cursor-pointer hover:underline hover:text-blue-700"
-              @click="goToDetail(article)"
-            >
-              Read more
-            </span>
+            <div class="flex justify-end">
+              <span
+                class="text-blue-600 text-sm float-right -mt-2 cursor-pointer hover:underline hover:text-blue-700"
+                @click="goToDetail(article)"
+              >
+                Read more
+              </span>
+            </div>
           </div>
         </div>
       </div>
