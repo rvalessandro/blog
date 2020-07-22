@@ -34,24 +34,27 @@
 import { mapGetters, mapActions } from "vuex";
 
 export default {
+  data: () => ({
+    article: null
+  }),
   computed: {
     ...mapGetters(["articles"]),
-    article: function() {
-      let article = null;
-
-      if (this.articles) {
-        article = this.articles.find(
-          article => article.id == this.$route.params.id
-        );
-      }
-
-      article = this.$store.getters["article"];
-
-      return article;
-    }
+    article: function() {}
   },
   created() {
-    this.fetchArticle(this.$route.params.id);
+    let article = null;
+
+    if (this.articles) {
+      article = this.articles.find(
+        article => article.id == this.$route.params.id
+      );
+    }
+    if (!article) {
+      this.fetchArticle(this.$route.params.id);
+      article = this.$store.getters["article"];
+    }
+
+    this.article = article;
   },
   methods: {
     ...mapActions(["fetchArticle"]),
