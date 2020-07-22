@@ -1,7 +1,9 @@
 <template>
   <div>
     <Navbar />
-    <Nuxt class="container mx-auto px-8 sm:px-0 pb-8 sm-pb-4 md-pb-8" />
+    <transition name="fade" mode="out-in">
+      <Nuxt class="container mx-auto px-8 sm:px-0 pb-8 sm-pb-4 md-pb-8" />
+    </transition>
   </div>
 </template>
 
@@ -22,5 +24,17 @@ h3,
 h4,
 h5.h6 {
   font-family: serif;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition-duration: 0.3s;
+  transition-property: opacity;
+  transition-timing-function: ease;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
 }
 </style>
