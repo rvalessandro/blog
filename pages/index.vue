@@ -66,20 +66,23 @@
                 class="mb-6 mr-4"
               >
                 <span
-                  class="text-sm text-gray-70 pb-2 border-b-2 border-blue-500"
+                  class="text-sm text-gray-700 pb-2 border-b-2 border-blue-500"
                 >
                   {{ category.name }}
                 </span>
               </div>
             </div>
 
-            <span class="text-sm text-gray-600 w-32">
+            <span
+              class="text-sm text-gray-600 w-32"
+              style="margin-top: .125rem"
+            >
               {{ formatDate(article.created_at) }}
             </span>
           </div>
 
           <div id="preview" class="w-full text-gray-700 mt-1 sm:mt-0">
-            <div v-html="$md.render(article.preview)"></div>
+            <div class="content" v-html="$md.render(article.preview)"></div>
             <div class="flex justify-end">
               <span
                 class="text-blue-600 text-sm float-right -mt-2 cursor-pointer hover:underline hover:text-blue-700"
@@ -128,7 +131,11 @@ export default {
 h1#article-title:hover {
   transform: scale(1.01) !important;
 }
-#preview p {
+
+.content p {
   margin-bottom: 1.25rem;
+  line-height: 2rem;
+  font-size: 1rem;
+  color: #2d3748;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <nav class="h-16 container mx-auto">
+  <nav class="h-16 container px-8 md:px-0 mx-auto">
     <div class="flex justify-between items-center h-full w-full">
       <div></div>
 
