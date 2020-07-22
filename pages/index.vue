@@ -1,26 +1,47 @@
 <template>
-  <div class="">
-    <div
-      id="categories"
-      class="w-full flex flex-wrap justify-evenly -ml-4 -mr-4 md:ml-0 md:mr-0 md:justify-center"
-    >
+  <div class="flex flex-col-reverse md:flex-col">
+    <div id="categories" class="w-full -ml-4 -mr-4 md:ml-0 md:mr-0 ">
       <div
-        class="mx-6 mt-4 bg-gray-200 text-gray-600 px-6 py-2 text-sm font-semibold rounded cursor-pointer transition ease-in duration-75"
+        id="non-mobile-categories"
+        class="hidden md:flex flex-wrap justify-center"
       >
-        All
+        <div
+          class="mx-6 mt-4 bg-gray-200 text-gray-600 px-6 py-2 text-sm font-semibold rounded cursor-pointer transition ease-in duration-75"
+        >
+          All
+        </div>
+        <div
+          v-for="category in categories"
+          :key="category.id"
+          class="mx-6 mt-4 hover:bg-gray-200 text-gray-600 px-6 py-2 text-sm font-semibold rounded cursor-pointer transition ease-in duration-75"
+        >
+          <span> {{ category.name }} </span>
+        </div>
       </div>
+
       <div
-        v-for="category in categories"
-        :key="category.id"
-        class="mx-6 mt-4 hover:bg-gray-200 text-gray-600 px-6 py-2 text-sm font-semibold rounded cursor-pointer transition ease-in duration-75"
+        id="mobile-categories"
+        class="flex md:hidden flex-col flex-wrap justify-center ml-4 w-full border-t-2 border-gray-600 pt-8"
       >
-        <span> {{ category.name }} </span>
+        <h1 class=" font-semibold text-gray-800 text-lg uppercase">
+          Categories
+        </h1>
+        <li class="mt-1 text-gray-600 py-2 text-sm font-semibold underline">
+          All
+        </li>
+        <li
+          v-for="category in categories"
+          :key="category.id"
+          class="mt-0 text-gray-600 py-2 text-sm font-semibold underline"
+        >
+          <span> {{ category.name }} </span>
+        </li>
       </div>
     </div>
 
     <div
       id="articles"
-      class="mt-6 md:mt-12 flex flex-col mx-auto"
+      class="mt-2 sm-mt-6 md:mt-12 flex flex-col mx-auto"
       style="max-width: 44rem"
     >
       <div v-for="article in articles" :key="article.id" class="mb-10 md:mb-4">
