@@ -40,6 +40,9 @@ export default {
   computed: {
     ...mapGetters(["articles"])
   },
+  mounted() {
+    window.scrollTo(0, 0);
+  },
   async created() {
     let article = null;
 
