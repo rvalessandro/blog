@@ -50,13 +50,15 @@
       </button>
     </div>
 
-    <transition name="slide-fade">
-      <div
-        id="mobile-navigation"
-        class="w-screen z-20 bg-white absolute top-16 left-0 px-8 pb-4 shadow-md rounded"
-        v-if="showMobileNav"
-      >
-        <ul class="font-sans tracking-wider flex flex-col">
+    <div
+      id="mobile-navigation"
+      class="w-screen h-screen z-100 flex flex-col items-center -ml-8 px-8 pb-4 relative"
+    >
+      <transition name="slide-fade">
+        <ul
+          v-if="showMobileNav"
+          class="font-sans tracking-wider flex flex-col shadow-md rounded bg-white w-screen -mt-3 pb-4"
+        >
           <button
             @click="goTo('/')"
             class="my-3 uppercase text-sm font-semibold text-gray-600"
@@ -76,15 +78,26 @@
             about
           </button>
         </ul>
-      </div>
-    </transition>
+      </transition>
+
+      <transition name="fade">
+        <div
+          id="backdrop"
+          class="bg-blue h-full w-screen"
+          v-if="showMobileNav"
+          @click="showMobileNav = false"
+        >
+          &nbsp;
+        </div>
+      </transition>
+    </div>
   </nav>
 </template>
 
 <script>
 export default {
   data: () => ({
-    showMobileNav: false
+    showMobileNav: true
   }),
 
   methods: {
@@ -106,6 +119,9 @@ $hamburger-padding-y: 0;
 .hamburger {
   margin-top: 0.25rem;
 }
+#backdrop {
+  background-color: rgba($color: #000, $alpha: 0.1);
+}
 
 a.nuxt-link-active.nuxt-link-exact-active {
   color: #3182ce;
@@ -114,14 +130,22 @@ a.nuxt-link-active.nuxt-link-exact-active {
 
 <style lang="css" scoped>
 .slide-fade-enter-active {
-  transition: all 0.125s ease-in;
+  transition: all 0.2s ease-in;
 }
 .slide-fade-leave-active {
-  transition: all 0.125s ease-out;
+  transition: all 0.2s ease-out;
 }
 .slide-fade-enter, .slide-fade-leave-to
 /* .slide-fade-leave-active below version 2.1.8 */ {
   transform: translateX(10px);
   opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease-in;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  transition: opacity 0.2s ease-out;
 }
 </style>
