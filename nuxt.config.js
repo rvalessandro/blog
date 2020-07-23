@@ -29,7 +29,7 @@ export default {
       {
         rel: "stylesheet",
         href:
-          "http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext"
+          "https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext"
       }
     ]
   },
