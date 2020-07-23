@@ -5,24 +5,24 @@
       class="hidden md:flex justify-end items-center h-full w-full"
     >
       <ul class="font-sans tracking-wider flex">
-        <nuxt-link
-          to="/"
+        <button
+          @click="goTo('/')"
           class="mx-4 uppercase text-sm font-semibold text-gray-600"
         >
           blog
-        </nuxt-link>
-        <nuxt-link
-          to="/projects"
+        </button>
+        <button
+          @click="goTo('/projects')"
           class="mx-4 uppercase text-sm font-semibold text-gray-600"
         >
           projects
-        </nuxt-link>
-        <nuxt-link
-          to="/about"
+        </button>
+        <button
+          @click="goTo('/about')"
           class="mx-4 uppercase text-sm font-semibold text-gray-600"
         >
           about
-        </nuxt-link>
+        </button>
       </ul>
     </div>
 
@@ -53,24 +53,24 @@
         v-if="showMobileNav"
       >
         <ul class="font-sans tracking-wider flex flex-col">
-          <nuxt-link
-            to="/"
+          <button
+            @click="goTo('/')"
             class="my-3 uppercase text-sm font-semibold text-gray-600"
           >
             blog
-          </nuxt-link>
-          <nuxt-link
-            to="/projects"
+          </button>
+          <button
+            @click="goTo('/projects')"
             class="my-3 uppercase text-sm font-semibold text-gray-600"
           >
             projects
-          </nuxt-link>
-          <nuxt-link
-            to="/about"
+          </button>
+          <button
+            @click="goTo('/about')"
             class="my-3 uppercase text-sm font-semibold text-gray-600"
           >
             about
-          </nuxt-link>
+          </button>
         </ul>
       </div>
     </transition>
@@ -81,7 +81,14 @@
 export default {
   data: () => ({
     showMobileNav: false
-  })
+  }),
+
+  methods: {
+    goTo(link) {
+      this.showMobileNav = false;
+      this.$router.push(link);
+    }
+  }
 };
 </script>
 
