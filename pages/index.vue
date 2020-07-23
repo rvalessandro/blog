@@ -29,6 +29,7 @@
         <li
           class="mt-1 text-gray-600 py-2 text-sm font-semibold underline"
           @click="filter('All')"
+          :class="{ 'mobile-cat-active': activeCat == 'All' }"
         >
           All
         </li>
@@ -36,6 +37,7 @@
           v-for="category in categories"
           :key="category.id"
           class="mt-0 text-gray-600 py-2 text-sm font-semibold underline"
+          :class="{ 'mobile-cat-active': activeCat == category.name }"
           @click="filter(category.name)"
         >
           <span> {{ category.name }} </span>
@@ -55,7 +57,7 @@
       >
         <h1
           id="article-title"
-          class="text-3xl font-semibold text-gray-700 mb-3 cursor-pointer transition-all ease-in duration-75 hover:underline"
+          class="text-3xl underline font-semibold text-gray-700 mb-3 cursor-pointer transition-all ease-in duration-75 hover:underline"
           @click="goToDetail(article)"
         >
           {{ article.title }}
@@ -111,7 +113,8 @@ import { mapActions, mapGetters } from "vuex";
 
 export default {
   data: () => ({
-    displayedArticles: []
+    displayedArticles: [],
+    activeCat: "All"
   }),
   computed: {
     ...mapGetters(["allArticles", "categories"])
@@ -124,6 +127,7 @@ export default {
   methods: {
     ...mapActions(["fetchAllArticles", "fetchCategories", "filterByCategory"]),
     async filter(categoryName) {
+      this.activeCat = categoryName;
       try {
         if (categoryName == "All") {
           await this.fetchAllArticles();
@@ -161,5 +165,10 @@ h1#article-title:hover {
   line-height: 2rem;
   font-size: 1rem;
   color: #2d3748;
+}
+
+.mobile-cat-active {
+  color: #1a202c;
+  font-weight: 600;
 }
 </style>
