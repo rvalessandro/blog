@@ -97,7 +97,7 @@
 <script>
 export default {
   data: () => ({
-    showMobileNav: true
+    showMobileNav: false
   }),
 
   methods: {
