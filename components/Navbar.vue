@@ -1,5 +1,5 @@
 <template>
-  <nav class="h-16 container px-8 md:px-0 mx-auto">
+  <nav class="h-16 container px-8 md:px-0 mx-auto" style="max-width: 44rem">
     <div
       id="non-mobile"
       class="hidden md:flex justify-between items-center h-full w-full"
@@ -51,6 +51,7 @@
     </div>
 
     <div
+      v-show="showMobileNav"
       id="mobile-navigation"
       class="w-screen h-screen z-100 flex flex-col items-center -ml-8 px-8 pb-4 relative"
     >
