@@ -100,7 +100,16 @@ export default {
   data: () => ({
     showMobileNav: false
   }),
+  watch: {
+    showMobileNav: function() {
+      if (this.showMobileNav) {
+        document.documentElement.style.overflow = "hidden";
+        return;
+      }
 
+      document.documentElement.style.overflow = "auto";
+    }
+  },
   methods: {
     goTo(link) {
       this.showMobileNav = false;
