@@ -26,13 +26,17 @@
         <h1 class=" font-semibold text-gray-800 text-lg uppercase">
           Categories
         </h1>
-        <li class="mt-1 text-gray-600 py-2 text-sm font-semibold underline">
+        <li
+          class="mt-1 text-gray-600 py-2 text-sm font-semibold underline"
+          @click="filter('All')"
+        >
           All
         </li>
         <li
           v-for="category in categories"
           :key="category.id"
           class="mt-0 text-gray-600 py-2 text-sm font-semibold underline"
+          @click="filter(category.name)"
         >
           <span> {{ category.name }} </span>
         </li>
@@ -44,7 +48,11 @@
       class="mt-2 sm-mt-6 md:mt-12 flex flex-col mx-auto"
       style="max-width: 44rem"
     >
-      <div v-for="article in articles" :key="article.id" class="mb-10 md:mb-4">
+      <div
+        v-for="article in displayedArticles"
+        :key="article.id"
+        class="mb-10 md:mb-4"
+      >
         <h1
           id="article-title"
           class="text-3xl font-semibold text-gray-700 mb-3 cursor-pointer transition-all ease-in duration-75 hover:underline"
@@ -102,15 +110,31 @@
 import { mapActions, mapGetters } from "vuex";
 
 export default {
+  data: () => ({
+    displayedArticles: []
+  }),
   computed: {
-    ...mapGetters(["articles", "categories"])
+    ...mapGetters(["allArticles", "categories"])
   },
   async created() {
-    this.fetchArticles();
+    this.fetchAllArticles();
     this.fetchCategories();
+    this.displayedArticles = this.allArticles;
   },
   methods: {
-    ...mapActions(["fetchArticles", "fetchCategories"]),
+    ...mapActions(["fetchAllArticles", "fetchCategories", "filterByCategory"]),
+    async filter(categoryName) {
+      try {
+        if (categoryName == "All") {
+          await this.fetchAllArticles();
+          this.displayedArticles = this.allArticles;
+        } else {
+          this.displayedArticles = await this.filterByCategory(categoryName);
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    },
     goToDetail(article) {
       this.$router.push(`/articles/${article.id}`);
     },
