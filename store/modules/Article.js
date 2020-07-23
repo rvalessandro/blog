@@ -12,15 +12,7 @@ const getters = {
 const actions = {
   async fetchAllArticles({ commit, state }) {
     const res = await this.$axios.get("/articles?_sort=id:DESC");
-
-    let newArticles = [];
-    for (let i = 0; i < res.data.length; i++) {
-      if (!(res.data[i] in state.allArticles)) {
-        newArticles.push(res.data[i]);
-      }
-    }
-
-    commit("setAllArticles", newArticles);
+    commit("setAllArticles", res.data);
   },
   async filterByCategory({ commit, state }, categoryName) {
     const res = await this.$axios.get(
@@ -53,7 +45,7 @@ const actions = {
 };
 
 const mutations = {
-  setAllArticles: (state, articles) => state.allArticles.push(...articles),
+  setAllArticles: (state, articles) => (state.allArticles = articles),
 
   setArticle: (state, article) => (state.article = article)
 };
