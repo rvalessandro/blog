@@ -2,8 +2,12 @@
   <nav class="h-16 container px-8 md:px-0 mx-auto">
     <div
       id="non-mobile"
-      class="hidden md:flex justify-end items-center h-full w-full"
+      class="hidden md:flex justify-between items-center h-full w-full"
     >
+      <nuxt-link to="/" class="-mt-1">
+        <img src="https://img.icons8.com/color/36/000000/home.png" />
+      </nuxt-link>
+
       <ul class="font-sans tracking-wider flex">
         <button
           @click="goTo('/')"
