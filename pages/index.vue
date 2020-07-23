@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col-reverse md:flex-col">
+  <div class="flex flex-col md:flex-col">
     <div id="categories" class="w-full -ml-4 -mr-4 md:ml-0 md:mr-0 ">
       <div
         id="non-mobile-categories"
@@ -21,7 +21,7 @@
 
       <div
         id="mobile-categories"
-        class="flex md:hidden flex-col flex-wrap justify-center ml-4 w-full border-t-2 border-gray-600 pt-8"
+        class="flex md:hidden flex-col flex-wrap justify-center ml-4 w-full border-b-2 pb-6 mb-2 border-gray-600"
       >
         <h1 class=" font-semibold text-gray-800 text-lg uppercase">
           Categories
