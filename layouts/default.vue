@@ -14,12 +14,18 @@ export default {};
 </script>
 
 <style>
+html,
 body {
+  overflow-x: hidden;
   overflow-y: scroll;
+}
+body {
+  position: relative;
 }
 
 * {
   font-family: Lato;
+  box-sizing: border-box;
 }
 
 h1,
