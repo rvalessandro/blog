@@ -22,14 +22,12 @@ const actions = {
     return res.data;
   },
 
-  async fetchArticle({ commit }, articleId) {
+  async fetchArticle({ commit, state }, articleId) {
     commit("setArticle", null);
     let article = null;
 
-    if (state.articles) {
-      article = state.articles.find(
-        article => article.id == this.$route.params.id
-      );
+    if (state.allArticles) {
+      article = state.allArticles.find(article => article.id == articleId);
     }
     if (!article) {
       try {

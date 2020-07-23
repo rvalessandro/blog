@@ -37,25 +37,12 @@ export default {
   data: () => ({
     article: null
   }),
-  computed: {
-    ...mapGetters(["articles"])
-  },
   mounted() {
     window.scrollTo(0, 0);
   },
   async created() {
-    let article = null;
-
-    if (this.articles) {
-      article = this.articles.find(
-        article => article.id == this.$route.params.id
-      );
-    } else {
-      await this.fetchArticle(this.$route.params.id);
-      article = this.$store.getters["article"];
-    }
-
-    this.article = article;
+    await this.fetchArticle(this.$route.params.id);
+    this.article = this.$store.getters["article"];
   },
   methods: {
     ...mapActions(["fetchArticle"]),
