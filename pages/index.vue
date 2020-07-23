@@ -3,17 +3,21 @@
     <div id="categories" class="w-full -ml-4 -mr-4 md:ml-0 md:mr-0 ">
       <div
         id="non-mobile-categories"
-        class="hidden md:flex flex-wrap justify-center"
+        class="hidden md:flex flex-wrap justify-center text-gray-600"
       >
         <div
-          class="mx-6 mt-4 bg-gray-200 text-gray-600 px-6 py-2 text-sm font-semibold rounded cursor-pointer transition ease-in duration-75"
+          class="mx-6 mt-4 px-6 py-1 flex items-center justify-center text-sm font-semibold rounded  cursor-pointer transition ease-in duration-75"
+          :class="{ 'bg-blue-600 text-white': activeCat == 'All' }"
+          @click="filter('All')"
         >
           All
         </div>
         <div
           v-for="category in categories"
           :key="category.id"
-          class="mx-6 mt-4 hover:bg-gray-200 text-gray-600 px-6 py-2 text-sm font-semibold rounded cursor-pointer transition ease-in duration-75"
+          class="mx-6 mt-4 px-6 py-1 flex items-center justify-center text-sm font-semibold rounded  cursor-pointer transition ease-in duration-75"
+          :class="{ 'bg-blue-600 text-white': activeCat == category.name }"
+          @click="filter(category.name)"
         >
           <span> {{ category.name }} </span>
         </div>
@@ -21,23 +25,23 @@
 
       <div
         id="mobile-categories"
-        class="flex md:hidden flex-col flex-wrap justify-center ml-4 w-full border-b-2 pb-6 mb-2 border-gray-600"
+        class="flex text-blue-700 md:hidden flex-col flex-wrap justify-center ml-4 w-full border-b-2 pb-6 mb-2 border-gray-600"
       >
         <h1 class=" font-semibold text-gray-800 text-lg uppercase">
           Categories
         </h1>
         <li
-          class="mt-1 text-gray-600 py-2 text-sm font-semibold underline"
+          class="mt-0 py-2 text-sm font-semibold underline"
+          :class="{ 'text-gray-800 no-underline': activeCat == 'All' }"
           @click="filter('All')"
-          :class="{ 'mobile-cat-active': activeCat == 'All' }"
         >
           All
         </li>
         <li
           v-for="category in categories"
           :key="category.id"
-          class="mt-0 text-gray-600 py-2 text-sm font-semibold underline"
-          :class="{ 'mobile-cat-active': activeCat == category.name }"
+          class="mt-0 py-2 text-sm font-semibold underline"
+          :class="{ 'text-gray-800 no-underline': activeCat == category.name }"
           @click="filter(category.name)"
         >
           <span> {{ category.name }} </span>
@@ -165,10 +169,5 @@ h1#article-title:hover {
   line-height: 2rem;
   font-size: 1rem;
   color: #2d3748;
-}
-
-.mobile-cat-active {
-  color: #1a202c;
-  font-weight: 600;
 }
 </style>
