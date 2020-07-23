@@ -57,7 +57,7 @@
       <div
         v-for="article in displayedArticles"
         :key="article.id"
-        class="mb-10 md:mb-4"
+        class="mb-10 md:mb-4 ml-1"
       >
         <h1
           id="article-title"
