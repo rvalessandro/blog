@@ -58,7 +58,7 @@
       <transition name="slide-fade">
         <ul
           v-if="showMobileNav"
-          class="font-sans tracking-wider flex flex-col shadow-md rounded bg-white w-screen -mt-3 pb-4"
+          class="font-sans -ml-6 tracking-wider flex flex-col shadow-md rounded bg-white w-screen -mt-3 pb-4"
         >
           <button
             @click="goTo('/')"
