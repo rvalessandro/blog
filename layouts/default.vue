@@ -14,6 +14,10 @@ export default {};
 </script>
 
 <style>
+body {
+  overflow-y: scroll;
+}
+
 * {
   font-family: Lato;
 }

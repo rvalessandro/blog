@@ -3,11 +3,11 @@
     <div id="categories" class="w-full -ml-4 -mr-4 md:ml-0 md:mr-0 ">
       <div
         id="non-mobile-categories"
-        class="hidden md:flex flex-wrap justify-center text-gray-600"
+        class="hidden md:flex flex-wrap justify-center text-blue-700"
       >
         <div
-          class="mx-6 mt-4 px-6 py-1 flex items-center justify-center text-sm font-semibold rounded  cursor-pointer transition ease-in duration-75"
-          :class="{ 'bg-blue-600 text-white': activeCat == 'All' }"
+          class="mx-6 mt-4 px-6 py-1 flex items-center justify-center text-sm font-semibold rounded underline cursor-pointer transition ease-in duration-75"
+          :class="{ 'text-gray-800 no-underline': activeCat == 'All' }"
           @click="filter('All')"
         >
           All
@@ -15,8 +15,8 @@
         <div
           v-for="category in categories"
           :key="category.id"
-          class="mx-6 mt-4 px-6 py-1 flex items-center justify-center text-sm font-semibold rounded  cursor-pointer transition ease-in duration-75"
-          :class="{ 'bg-blue-600 text-white': activeCat == category.name }"
+          class="mx-6 mt-4 px-6 py-1 flex items-center justify-center text-sm font-semibold rounded underline cursor-pointer transition ease-in duration-75"
+          :class="{ 'text-gray-800 no-underline': activeCat == category.name }"
           @click="filter(category.name)"
         >
           <span> {{ category.name }} </span>
