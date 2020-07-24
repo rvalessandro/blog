@@ -25,7 +25,7 @@
 
       <div
         id="mobile-categories"
-        class="flex text-blue-700 md:hidden flex-col flex-wrap justify-center ml-4 w-full border-b-2 pb-6 mb-2 border-gray-600"
+        class="hidden text-blue-700 md:hidden flex-col flex-wrap justify-center ml-4 w-full border-b-2 pb-6 mb-2 border-gray-600"
       >
         <h1 class=" font-semibold text-gray-800 text-lg uppercase">
           Categories
@@ -57,11 +57,11 @@
       <div
         v-for="article in displayedArticles"
         :key="article.id"
-        class="mb-10 md:mb-4 ml-1"
+        class="mb-8 md:mb-4 ml-1"
       >
         <h1
           id="article-title"
-          class="text-3xl underline font-semibold text-gray-700 mb-3 cursor-pointer transition-all ease-in duration-75 hover:underline"
+          class="text-2xl md:text-3xl underline font-semibold text-gray-700 mb-3 cursor-pointer transition-all ease-in duration-75 hover:underline"
           @click="goToDetail(article)"
         >
           {{ article.title }}
@@ -80,7 +80,8 @@
                 class="mb-6 mr-4"
               >
                 <span
-                  class="text-sm text-gray-700 pb-2 border-b-2 border-blue-500"
+                  class="text-sm text-gray-700 pb-2 border-b-2"
+                  style="border-color: #14213d;"
                 >
                   {{ category.name }}
                 </span>
@@ -99,7 +100,7 @@
             <div class="content" v-html="$md.render(article.preview)"></div>
             <div class="flex justify-end">
               <span
-                class="text-blue-600 text-sm float-right -mt-2 cursor-pointer hover:underline hover:text-blue-700"
+                class="text-blue-600 text-sm underline float-right -mt-4 md:-mt-2 cursor-pointer hover:underline hover:text-blue-700"
                 @click="goToDetail(article)"
               >
                 Read more
@@ -159,7 +160,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 h1#article-title:hover {
   transform: scale(1.01) !important;
 }
@@ -167,7 +168,12 @@ h1#article-title:hover {
 .content p {
   margin-bottom: 1.25rem;
   line-height: 2rem;
-  font-size: 1rem;
+  font-size: 0.875rem;
   color: #2d3748;
+}
+@media screen and (min-width: 768px) {
+  .content p {
+    font-size: 1rem;
+  }
 }
 </style>

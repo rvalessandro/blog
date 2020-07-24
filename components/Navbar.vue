@@ -58,7 +58,7 @@
       <transition name="slide-fade">
         <ul
           v-if="showMobileNav"
-          class="font-sans -ml-4 tracking-wider flex flex-col shadow-md rounded bg-white w-screen -mt-3 pb-4"
+          class="font-sans -ml-3 tracking-wider flex flex-col shadow-md rounded bg-white w-screen -mt-3 pb-4"
         >
           <button
             @click="goTo('/')"
@@ -122,7 +122,7 @@ export default {
 <style lang="scss" scoped>
 $hamburger-layer-width: 36px;
 $hamburger-layer-height: 3px;
-$hamburger-layer-color: #4a5568;
+$hamburger-layer-color: #14213d;
 $hamburger-padding-x: 0;
 $hamburger-padding-y: 0;
 @import "node_modules/hamburgers/_sass/hamburgers/hamburgers.scss";
@@ -130,7 +130,7 @@ $hamburger-padding-y: 0;
   margin-top: 0.25rem;
 }
 #backdrop {
-  background-color: rgba($color: #000, $alpha: 0.1);
+  background-color: rgba($color: #14213d, $alpha: 0.15);
 }
 
 a.nuxt-link-active.nuxt-link-exact-active {

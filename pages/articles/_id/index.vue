@@ -3,7 +3,7 @@
     <div v-if="article">
       <div
         id="title"
-        class="text-3xl font-semibold text-gray-700 mb-3 mt-4 font-serif"
+        class="text-2xl md:text-3xl font-semibold text-gray-700 mb-3 mt-4 font-serif"
       >
         {{ article.title }}
       </div>
@@ -62,17 +62,27 @@ export default {
 .content p {
   margin-bottom: 1.25rem;
   line-height: 2rem;
-  font-size: 1rem;
+  font-size: 0.875rem;
   color: #2d3748;
 }
-
 .content ul {
   margin-bottom: 1.25rem;
-  margin-left: 1.5rem;
+  margin-left: 1.25rem;
+  font-size: 0.875rem;
 }
+
 .content li {
   list-style-type: disc;
   margin-bottom: 0.5rem;
+}
+@media screen and (min-width: 768px) {
+  .content p {
+    font-size: 1rem;
+  }
+  .content ul {
+    margin-left: 1.5rem;
+    font-size: 1rem;
+  }
 }
 
 blockquote {
