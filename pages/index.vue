@@ -61,7 +61,7 @@
       >
         <h1
           id="article-title"
-          class="text-2xl md:text-3xl underline font-semibold text-gray-700 mb-3 cursor-pointer transition-all ease-in duration-75 hover:underline"
+          class="text-2xl md:text-3xl font-semibold text-gray-700 mb-3 cursor-pointer transition-all ease-in duration-75 hover:underline"
           @click="goToDetail(article)"
         >
           {{ article.title }}
@@ -160,16 +160,18 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss">
 h1#article-title:hover {
   transform: scale(1.01) !important;
 }
 
-.content p {
-  margin-bottom: 1.25rem;
-  line-height: 2rem;
-  font-size: 0.875rem;
-  color: #2d3748;
+.content {
+  p {
+    margin-bottom: 1.25rem !important;
+    line-height: 2rem;
+    font-size: 0.875rem;
+    color: #2d3748;
+  }
 }
 @media screen and (min-width: 768px) {
   .content p {

@@ -58,22 +58,25 @@ export default {
 };
 </script>
 
-<style>
-.content p {
-  margin-bottom: 1.25rem;
-  line-height: 2rem;
-  font-size: 0.875rem;
-  color: #2d3748;
-}
-.content ul {
-  margin-bottom: 1.25rem;
-  margin-left: 1.25rem;
-  font-size: 0.875rem;
-}
+<style lang="scss">
+.content {
+  p {
+    margin-bottom: 1.25rem !important;
+    line-height: 2rem;
+    font-size: 0.875rem;
+    color: #2d3748;
+  }
 
-.content li {
-  list-style-type: disc;
-  margin-bottom: 0.5rem;
+  ul {
+    margin-bottom: 1.25rem;
+    margin-left: 1.25rem;
+    font-size: 0.875rem;
+  }
+
+  li {
+    list-style-type: disc;
+    margin-bottom: 0.5rem;
+  }
 }
 @media screen and (min-width: 768px) {
   .content p {
