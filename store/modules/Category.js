@@ -1,5 +1,5 @@
 const state = () => ({
-  categories: null
+  categories: []
 });
 
 const getters = {
