@@ -17,11 +17,16 @@ const actions = {
     commit("setAllArticles", res.data);
   },
   async filterByCategory({ commit, state }, categoryName) {
+    if (categoryName == "All") {
+      console.log("all");
+      commit("setDisplayedArticles", state.allArticles);
+      return;
+    }
     const res = await this.$axios.get(
       `/articles?categories.name=${categoryName}&&_sort=id:DESC`
     );
 
-    return res.data;
+    commit("setDisplayedArticles", res.data);
   },
 
   async fetchArticle({ commit, state }, articleId) {

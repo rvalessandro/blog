@@ -137,12 +137,7 @@ export default {
     async filter(categoryName) {
       this.activeCat = categoryName;
       try {
-        if (categoryName == "All") {
-          await this.fetchAllArticles();
-          this.displayedArticles = this.allArticles;
-        } else {
-          this.displayedArticles = await this.filterByCategory(categoryName);
-        }
+        await this.filterByCategory(categoryName);
       } catch (err) {
         console.log(err);
       }
