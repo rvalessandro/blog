@@ -128,7 +128,9 @@ export default {
     if (this.allArticles.length < 1) {
       await this.fetchAllArticles();
     }
-    this.fetchCategories();
+    if (this.categories.length < 1) {
+      this.fetchCategories();
+    }
     this.displayedArticles = this.allArticles;
   },
   methods: {
