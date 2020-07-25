@@ -114,20 +114,18 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from "vuex";
+import { mapActions, mapGetters, mapMutations } from "vuex";
 
 export default {
   data: () => ({
-    displayedArticles: [],
     activeCat: "All"
   }),
   computed: {
-    ...mapGetters(["allArticles", "categories"])
+    ...mapGetters(["allArticles", "displayedArticles", "categories"])
   },
   async created() {
     if (this.allArticles.length < 1) {
       await this.fetchAllArticles();
-      this.displayedArticles = this.allArticles;
     }
     if (this.categories.length < 1) {
       this.fetchCategories();
@@ -135,6 +133,7 @@ export default {
   },
   methods: {
     ...mapActions(["fetchAllArticles", "fetchCategories", "filterByCategory"]),
+    ...mapMutations(["setDisplayedArticles"]),
     async filter(categoryName) {
       this.activeCat = categoryName;
       try {

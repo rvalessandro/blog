@@ -1,5 +1,6 @@
 const state = () => ({
   allArticles: [],
+  displayedArticles: [],
   article: null
 });
 
@@ -12,6 +13,7 @@ const getters = {
 const actions = {
   async fetchAllArticles({ commit, state }) {
     const res = await this.$axios.get("/articles?_sort=id:DESC");
+    commit("setDisplayedArticles", res.data);
     commit("setAllArticles", res.data);
   },
   async filterByCategory({ commit, state }, categoryName) {
@@ -44,6 +46,8 @@ const actions = {
 
 const mutations = {
   setAllArticles: (state, articles) => (state.allArticles = articles),
+  setDisplayedArticles: (state, articles) =>
+    (state.displayedArticles = articles),
 
   setArticle: (state, article) => (state.article = article)
 };
