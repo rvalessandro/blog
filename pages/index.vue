@@ -125,7 +125,9 @@ export default {
     ...mapGetters(["allArticles", "categories"])
   },
   async created() {
-    await this.fetchAllArticles();
+    if (this.allArticles.length < 1) {
+      await this.fetchAllArticles();
+    }
     this.fetchCategories();
     this.displayedArticles = this.allArticles;
   },

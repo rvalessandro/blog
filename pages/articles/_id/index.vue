@@ -16,7 +16,7 @@
             class="mb-6 mr-4"
           >
             <span
-              class="text-sm text-gray-700 pb-2 border-b-2 border-blue-500"
+              class="text-sm text-gray-700 pb-2 border-b-2"
               style="border-color: #14213d;"
             >
               {{ category.name }}
