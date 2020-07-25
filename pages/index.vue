@@ -127,11 +127,11 @@ export default {
   async created() {
     if (this.allArticles.length < 1) {
       await this.fetchAllArticles();
+      this.displayedArticles = this.allArticles;
     }
     if (this.categories.length < 1) {
       this.fetchCategories();
     }
-    this.displayedArticles = this.allArticles;
   },
   methods: {
     ...mapActions(["fetchAllArticles", "fetchCategories", "filterByCategory"]),
