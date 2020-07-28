@@ -1,67 +1,14 @@
 <template>
   <div class="flex flex-col md:flex-col">
-    <div id="categories" class="w-full -ml-4 -mr-4 md:ml-0 md:mr-0 ">
-      <div
-        id="non-mobile-categories"
-        class="hidden md:flex flex-wrap justify-center text-blue-700"
-      >
-        <div
-          class="mx-6 mt-4 px-6 py-1 flex items-center justify-center text-sm font-semibold rounded underline cursor-pointer transition ease-in duration-75"
-          :class="{ 'text-gray-800 no-underline': activeCat == 'All' }"
-          @click="filter('All')"
-        >
-          All
-        </div>
-        <div
-          v-for="category in categories"
-          :key="category.id"
-          class="mx-6 mt-4 px-6 py-1 flex items-center justify-center text-sm font-semibold rounded underline cursor-pointer transition ease-in duration-75"
-          :class="{ 'text-gray-800 no-underline': activeCat == category.name }"
-          @click="filter(category.name)"
-        >
-          <span> {{ category.name }} </span>
-        </div>
-      </div>
-
-      <div
-        id="mobile-categories"
-        class="hidden text-blue-700 md:hidden flex-col flex-wrap justify-center ml-4 w-full border-b-2 pb-6 mb-2 border-gray-600"
-      >
-        <h1 class=" font-semibold text-gray-800 text-lg uppercase">
-          Categories
-        </h1>
-        <li
-          class="mt-0 py-2 text-sm font-semibold underline"
-          :class="{ 'text-gray-800 no-underline': activeCat == 'All' }"
-          @click="filter('All')"
-        >
-          All
-        </li>
-        <li
-          v-for="category in categories"
-          :key="category.id"
-          class="mt-0 py-2 text-sm font-semibold underline"
-          :class="{ 'text-gray-800 no-underline': activeCat == category.name }"
-          @click="filter(category.name)"
-        >
-          <span> {{ category.name }} </span>
-        </li>
-      </div>
-    </div>
-
-    <div
-      id="articles"
-      class="mt-2 sm-mt-6 md:mt-12 flex flex-col mx-auto"
-      style="max-width: 44rem"
-    >
+    <div id="articles" class="flex flex-col mx-auto" style="max-width: 44rem">
       <div
         v-for="article in displayedArticles"
         :key="article.id"
-        class="mb-8 md:mb-4 ml-1"
+        class="mb-8 md:mb-4"
       >
         <h1
           id="article-title"
-          class="text-2xl md:text-3xl font-semibold text-gray-700 mb-3 cursor-pointer transition-all ease-in duration-75 hover:underline"
+          class="text-2xl md:text-3xl font-semibold text-gray-800 mb-3 cursor-pointer transition-all ease-in duration-75 hover:underline"
           @click="goToDetail(article)"
         >
           {{ article.title }}

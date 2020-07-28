@@ -1,9 +1,9 @@
 <template>
-  <div class="container mx-auto pb-12 -mt-2" style="max-width: 44rem">
+  <div class="container mx-auto pb-12" style="max-width: 44rem">
     <div v-if="article">
       <div
         id="title"
-        class="text-2xl md:text-3xl font-semibold text-gray-700 mb-3 mt-4 font-serif"
+        class="text-2xl md:text-3xl font-semibold text-gray-800 mb-3 font-serif"
       >
         {{ article.title }}
       </div>

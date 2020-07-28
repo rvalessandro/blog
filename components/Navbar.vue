@@ -1,5 +1,8 @@
 <template>
-  <nav class="h-16 container px-8 md:px-0 mx-auto" style="max-width: 44rem">
+  <nav
+    class="h-16 container px-8 md:px-0 mx-auto mb-2"
+    style="max-width: 44rem"
+  >
     <div
       id="non-mobile"
       class="hidden md:flex justify-between items-center h-full w-full"
@@ -11,19 +14,28 @@
       <ul class="font-sans tracking-wider flex">
         <button
           @click="goTo('/')"
-          class="mx-4 uppercase text-sm font-semibold text-gray-600"
+          class="mx-2 px-2 uppercase text-sm font-semibold text-gray-600"
+          :class="{
+            'text-gray-700 border-b-2 border-gray-700': activePage == 1
+          }"
         >
           blog
         </button>
         <button
           @click="goTo('/projects')"
-          class="mx-4 uppercase text-sm font-semibold text-gray-600"
+          class="mx-2 px-2 uppercase text-sm font-semibold text-gray-600"
+          :class="{
+            'text-gray-700 border-b-2 border-gray-700': activePage == 2
+          }"
         >
           projects
         </button>
         <button
           @click="goTo('/about')"
-          class="mx-4 uppercase text-sm font-semibold text-gray-600"
+          class="mx-2 px-2 uppercase text-sm font-semibold text-gray-600"
+          :class="{
+            'text-gray-700 border-b-2 border-gray-700': activePage == 3
+          }"
         >
           about
         </button>
@@ -100,6 +112,14 @@ export default {
   data: () => ({
     showMobileNav: false
   }),
+  computed: {
+    activePage: function() {
+      switch (this.$route.path) {
+        case "/":
+          return 1;
+      }
+    }
+  },
   watch: {
     showMobileNav: function() {
       if (this.showMobileNav) {
@@ -131,10 +151,6 @@ $hamburger-padding-y: 0;
 }
 #backdrop {
   background-color: rgba($color: #14213d, $alpha: 0.15);
-}
-
-a.nuxt-link-active.nuxt-link-exact-active {
-  color: #3182ce;
 }
 </style>
 
