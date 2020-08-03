@@ -11,6 +11,9 @@
         <img src="../assets/svg/icons8-gitlab.svg" alt="Gitlab" />
       </a>
     </div>
+    <div id="credits" class="mt-2 text-center text-gray-600">
+      <span>Raffi Verrel Alessandro - 2020</span>
+    </div>
   </div>
 </template>
 

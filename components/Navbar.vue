@@ -49,7 +49,7 @@
       </nuxt-link>
 
       <button
-        class="hamburger hamburger--squeeze focus:outline-none"
+        class="hamburger hamburger--squeeze focus:outline-none mt-3"
         :class="{ 'is-active': showMobileNav }"
         type="button"
         @click="showMobileNav = !showMobileNav"
