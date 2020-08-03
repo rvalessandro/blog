@@ -1,5 +1,5 @@
 <template>
-  <div id="footer" class="container">
+  <div id="footer" class="container mx-auto">
     <div id="links">
       <a href="https://linkedin.com/in/rvalessandro">
         <img src="../assets/svg/icons8-linkedin-2.svg" alt="LinkedIn" />
@@ -16,7 +16,7 @@
 
 <style lang="scss" scoped>
 #footer {
-  padding: 0 1rem 2rem 1rem;
+  padding: 2rem 1rem;
 
   #links {
     display: flex;

@@ -2,7 +2,7 @@
   <div>
     <Navbar />
     <transition name="fade" mode="out-in">
-      <Nuxt class="container mx-auto px-8 sm:px-0 pt-2 pb-8 sm-pb-4 md-pb-8" />
+      <Nuxt class="container mx-auto px-8 sm:px-0 pt-2" />
     </transition>
     <Footer />
   </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto pb-12" style="max-width: 44rem">
+  <div class="container mx-auto -mb-5" style="max-width: 44rem">
     <div v-if="article">
       <div
         id="title"

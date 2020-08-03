@@ -1,7 +1,8 @@
 <template>
   <nav
+    id="navbar"
     class="h-16 container px-8 md:px-0 mx-auto mb-2"
-    style="max-width: 44rem"
+    style="max-width: 44rem;"
   >
     <div
       id="non-mobile"
@@ -11,10 +12,10 @@
         <img src="https://img.icons8.com/color/36/000000/home.png" />
       </nuxt-link>
 
-      <ul class="font-sans tracking-wider flex">
+      <ul class="font-sans flex">
         <button
           @click="goTo('/')"
-          class="mx-2 px-2 uppercase text-sm font-semibold text-gray-600"
+          class="mx-2 px-2 uppercase text-sm font-regular text-gray-800 tracking-wider"
           :class="{
             'text-gray-700 border-b-2 border-gray-700': activePage == 1
           }"
@@ -23,7 +24,7 @@
         </button>
         <button
           @click="goTo('/projects')"
-          class="mx-2 px-2 uppercase text-sm font-semibold text-gray-600"
+          class="mx-2 px-2 uppercase text-sm font-regular text-gray-800 tracking-wider"
           :class="{
             'text-gray-700 border-b-2 border-gray-700': activePage == 2
           }"
@@ -32,7 +33,7 @@
         </button>
         <button
           @click="goTo('/about')"
-          class="mx-2 px-2 uppercase text-sm font-semibold text-gray-600"
+          class="mx-2 px-2 uppercase text-sm font-regular text-gray-800 tracking-wider"
           :class="{
             'text-gray-700 border-b-2 border-gray-700': activePage == 3
           }"
@@ -42,10 +43,7 @@
       </ul>
     </div>
 
-    <div
-      id="mobile"
-      class="flex md:hidden items-center justify-between h-full w-full"
-    >
+    <div class="flex md:hidden items-center justify-between h-full w-full">
       <nuxt-link to="/" class="-mt-1">
         <img src="https://img.icons8.com/color/36/000000/home.png" />
       </nuxt-link>
@@ -65,31 +63,43 @@
     <div
       v-show="showMobileNav"
       id="mobile-navigation"
-      class="w-screen h-screen z-100 flex flex-col items-center -ml-8 px-8 pb-4 relative"
+      class="w-screen h-screen z-100 flex flex-col px-8 pb-4 relative -ml-16"
     >
       <transition name="slide-fade">
         <ul
           v-if="showMobileNav"
-          class="font-sans -ml-3 tracking-wider flex flex-col shadow-md rounded bg-white w-screen -mt-3 pb-4"
+          class="flex flex-col shadow-md rounded bg-white w-screen -mt-3 pb-4 px-8"
         >
           <button
             @click="goTo('/')"
-            class="my-3 uppercase text-sm font-semibold text-gray-600"
+            class="my-2 uppercase text-sm font-regular text-gray-800 tracking-wider"
           >
             blog
           </button>
           <button
             @click="goTo('/projects')"
-            class="my-3 uppercase text-sm font-semibold text-gray-600"
+            class="my-2 uppercase text-sm font-regular text-gray-800 tracking-wider"
           >
             projects
           </button>
           <button
             @click="goTo('/about')"
-            class="my-3 uppercase text-sm font-semibold text-gray-600"
+            class="my-2 uppercase text-sm font-regular text-gray-800 tracking-wider"
           >
             about
           </button>
+
+          <div id="links">
+            <a href="https://linkedin.com/in/rvalessandro">
+              <img src="../assets/svg/icons8-linkedin-2.svg" alt="LinkedIn" />
+            </a>
+            <a href="https://github.com/rvalessandro">
+              <img src="../assets/svg/icons8-github.svg" alt="Github" />
+            </a>
+            <a href="https://gitlab.com/rvalessandro">
+              <img src="../assets/svg/icons8-gitlab.svg" alt="Gitlab" />
+            </a>
+          </div>
         </ul>
       </transition>
 
@@ -140,6 +150,28 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#navbar * {
+  font-family: Lato;
+
+  #links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 1rem 0;
+
+    img {
+      margin: 0 1rem;
+      width: 2.25rem;
+    }
+  }
+}
+#backdrop {
+  background-color: rgba($color: #14213d, $alpha: 0.15);
+}
+</style>
+
+<style lang="scss" scoped>
 $hamburger-layer-width: 36px;
 $hamburger-layer-height: 3px;
 $hamburger-layer-color: #14213d;
@@ -149,12 +181,6 @@ $hamburger-padding-y: 0;
 .hamburger {
   margin-top: 0.25rem;
 }
-#backdrop {
-  background-color: rgba($color: #14213d, $alpha: 0.15);
-}
-</style>
-
-<style lang="css" scoped>
 .slide-fade-enter-active {
   transition: all 0.2s ease-in;
 }
