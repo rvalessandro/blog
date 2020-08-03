@@ -8,8 +8,8 @@
       id="non-mobile"
       class="hidden md:flex justify-between items-center h-full w-full"
     >
-      <nuxt-link to="/" class="-mt-1">
-        <img src="../assets/svg/icons8-home.svg" style="width: 2.75rem" />
+      <nuxt-link to="/">
+        <img src="../assets/svg/icons8-home.svg" style="width: 2.5rem" />
       </nuxt-link>
 
       <ul class="font-sans flex">
@@ -44,8 +44,8 @@
     </div>
 
     <div class="flex md:hidden items-center justify-between h-full w-full">
-      <nuxt-link to="/" class="-mt-1">
-        <img src="../assets/svg/icons8-home.svg" style="width: 2.75rem" />
+      <nuxt-link to="/">
+        <img src="../assets/svg/icons8-home.svg" style="width: 2.5rem" />
       </nuxt-link>
 
       <button
