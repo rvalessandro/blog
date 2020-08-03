@@ -49,12 +49,12 @@
       </nuxt-link>
 
       <button
-        class="hamburger hamburger--squeeze focus:outline-none mt-3"
+        class="hamburger hamburger--squeeze focus:outline-none"
         :class="{ 'is-active': showMobileNav }"
         type="button"
         @click="showMobileNav = !showMobileNav"
       >
-        <span class="hamburger-box">
+        <span class="hamburger-box mt-2">
           <span class="hamburger-inner"></span>
         </span>
       </button>
