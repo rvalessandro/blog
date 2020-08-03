@@ -106,6 +106,12 @@ export default {
 </script>
 
 <style lang="scss">
+#articles {
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
 h1#article-title:hover {
   transform: scale(1.01) !important;
 }
