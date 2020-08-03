@@ -28,8 +28,7 @@ export default {
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       {
         rel: "stylesheet",
-        href:
-          "https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext"
+        href: "https://fonts.googleapis.com/css?family=Lato|Poppins"
       }
     ]
   },

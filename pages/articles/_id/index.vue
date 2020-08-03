@@ -1,12 +1,12 @@
 <template>
   <div class="container mx-auto -mb-5" style="max-width: 44rem">
     <div v-if="article">
-      <div
+      <h1
         id="title"
-        class="text-2xl md:text-3xl font-semibold text-gray-800 mb-3 font-serif"
+        class="text-xl text-gray-800 font-semibold leading-normal mb-3 "
       >
         {{ article.title }}
-      </div>
+      </h1>
 
       <div class="flex justify-between">
         <div id="categories" class="flex flex-wrap w-full">

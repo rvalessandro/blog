@@ -8,7 +8,7 @@
       >
         <h1
           id="article-title"
-          class="text-2xl md:text-3xl font-semibold text-gray-800 mb-3 cursor-pointer transition-all ease-in duration-75 hover:underline"
+          class="text-xl text-gray-800 font-semibold leading-normal mb-3 cursor-pointer transition-all ease-in duration-75 hover:underline"
           @click="goToDetail(article)"
         >
           {{ article.title }}

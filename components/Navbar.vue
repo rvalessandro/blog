@@ -1,7 +1,7 @@
 <template>
   <nav
     id="navbar"
-    class="h-16 container px-8 md:px-0 mx-auto mb-2"
+    class="h-16 container px-8 md:px-0 mx-auto mb-4"
     style="max-width: 44rem;"
   >
     <div
@@ -12,10 +12,10 @@
         <img src="../assets/svg/icons8-home.svg" style="width: 2.5rem" />
       </nuxt-link>
 
-      <ul class="font-sans flex">
+      <ul class="flex">
         <button
           @click="goTo('/')"
-          class="mx-2 px-2 uppercase text-sm font-regular text-gray-800 tracking-wider"
+          class="mx-2 px-2 uppercase text-sm font-regular text-gray-800 tracking-wide"
           :class="{
             'text-gray-700 border-b-2 border-gray-700': activePage == 1
           }"
@@ -24,7 +24,7 @@
         </button>
         <button
           @click="goTo('/projects')"
-          class="mx-2 px-2 uppercase text-sm font-regular text-gray-800 tracking-wider"
+          class="mx-2 px-2 uppercase text-sm font-regular text-gray-800 tracking-wide"
           :class="{
             'text-gray-700 border-b-2 border-gray-700': activePage == 2
           }"
@@ -33,7 +33,7 @@
         </button>
         <button
           @click="goTo('/about')"
-          class="mx-2 px-2 uppercase text-sm font-regular text-gray-800 tracking-wider"
+          class="mx-2 px-2 uppercase text-sm font-regular text-gray-800 tracking-wide"
           :class="{
             'text-gray-700 border-b-2 border-gray-700': activePage == 3
           }"
@@ -72,19 +72,19 @@
         >
           <button
             @click="goTo('/')"
-            class="my-2 uppercase text-sm font-regular text-gray-800 tracking-wider"
+            class="my-2 uppercase text-sm font-regular text-gray-800 tracking-wide"
           >
             blog
           </button>
           <button
             @click="goTo('/projects')"
-            class="my-2 uppercase text-sm font-regular text-gray-800 tracking-wider"
+            class="my-2 uppercase text-sm font-regular text-gray-800 tracking-wide"
           >
             projects
           </button>
           <button
             @click="goTo('/about')"
-            class="my-2 uppercase text-sm font-regular text-gray-800 tracking-wider"
+            class="my-2 uppercase text-sm font-regular text-gray-800 tracking-wide"
           >
             about
           </button>
@@ -151,7 +151,7 @@ export default {
 
 <style lang="scss" scoped>
 #navbar * {
-  font-family: Lato;
+  font-family: Poppins;
 
   #links {
     display: flex;
