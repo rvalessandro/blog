@@ -3,12 +3,13 @@
     <img
       :src="`https://blog-api.rvalessandro.com${book.image.url}`"
       alt="Cover"
-      class="w-full h-auto mx-auto mb-6 md:mb-0"
+      class="w-full h-auto mx-auto mb-6 md:mb-0 cursor-pointer"
+      @click="goTo(book.link)"
     />
     <div class="md:ml-6">
       <h1
         id="title"
-        class="text-2xl text-gray-800 tracking-wider font-semibold leading-normal mb-2 underline cursor-pointer hover:text-blue-700 transition duration-75 ease-in"
+        class="text-2xl text-gray-800 tracking-wider font-semibold leading-normal mb-2 cursor-pointer hover:text-blue-700 transition duration-75 ease-in"
         @click="goTo(book.link)"
       >
         {{ book.title }}

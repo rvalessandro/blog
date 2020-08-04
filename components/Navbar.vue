@@ -127,6 +127,8 @@ export default {
       switch (this.$route.path) {
         case "/":
           return 1;
+        case "/books":
+          return 2;
       }
     }
   },
