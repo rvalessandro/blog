@@ -8,7 +8,8 @@
     <div class="md:ml-6">
       <h1
         id="title"
-        class="text-2xl text-gray-800 tracking-wide font-semibold leading-normal mb-2"
+        class="text-2xl text-gray-800 tracking-wider font-semibold leading-normal mb-2 underline cursor-pointer hover:text-blue-700 transition duration-75 ease-in"
+        @click="goTo(book.link)"
       >
         {{ book.title }}
       </h1>
@@ -19,7 +20,12 @@
 
 <script>
 export default {
-  props: ["book"]
+  props: ["book"],
+  methods: {
+    goTo(link) {
+      window.location.href = link;
+    }
+  }
 };
 </script>
 

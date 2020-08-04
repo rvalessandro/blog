@@ -39,6 +39,11 @@ export default {
 #category {
   margin-bottom: 1.5rem;
 }
+@media screen and (min-width: 768px) {
+  #category {
+    margin-bottom: 2.5rem;
+  }
+}
 #category:last-child {
   margin-bottom: 0;
 }
