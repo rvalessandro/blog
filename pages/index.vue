@@ -115,18 +115,4 @@ export default {
 h1#article-title:hover {
   transform: scale(1.01) !important;
 }
-
-.content {
-  p {
-    margin-bottom: 1.25rem !important;
-    line-height: 2rem;
-    font-size: 0.875rem;
-    color: #2d3748;
-  }
-}
-@media screen and (min-width: 768px) {
-  .content p {
-    font-size: 1rem;
-  }
-}
 </style>

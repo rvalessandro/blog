@@ -3,9 +3,10 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 
 import Article from "./modules/Article";
+import BookCategory from "./modules/BookCategory";
 import Category from "./modules/Category";
 
 export default () =>
   new Vuex.Store({
-    modules: [Article, Category]
+    modules: [Article, BookCategory, Category]
   });

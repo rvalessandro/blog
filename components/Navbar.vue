@@ -23,17 +23,17 @@
           blog
         </button>
         <button
-          @click="goTo('/projects')"
+          @click="goTo('/books')"
           class="mx-2 px-2 uppercase text-sm font-regular text-gray-800 tracking-wide"
           :class="{
             'text-gray-700 border-b-2 border-gray-700': activePage == 2
           }"
         >
-          projects
+          book recommendation
         </button>
         <button
           @click="goTo('/about')"
-          class="mx-2 px-2 uppercase text-sm font-regular text-gray-800 tracking-wide"
+          class="mx-2 px-2 uppercase text-sm font-regular text-gray-800 tracking-wide line-through"
           :class="{
             'text-gray-700 border-b-2 border-gray-700': activePage == 3
           }"
@@ -77,14 +77,14 @@
             blog
           </button>
           <button
-            @click="goTo('/projects')"
+            @click="goTo('/books')"
             class="my-2 uppercase text-sm font-regular text-gray-800 tracking-wide"
           >
-            projects
+            book recommendation
           </button>
           <button
             @click="goTo('/about')"
-            class="my-2 uppercase text-sm font-regular text-gray-800 tracking-wide"
+            class="my-2 uppercase text-sm font-regular text-gray-800 tracking-wide line-through"
           >
             about
           </button>
