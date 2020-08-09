@@ -72,7 +72,7 @@ export default {
   },
   async created() {
     if (this.allArticles.length < 1) {
-      await this.fetchAllArticles();
+      this.fetchAllArticles();
     }
     if (this.categories.length < 1) {
       this.fetchCategories();
