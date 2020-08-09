@@ -59,7 +59,8 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     "@nuxtjs/axios",
-    "@nuxtjs/markdownit"
+    "@nuxtjs/markdownit",
+    "nuxt-compress"
   ],
   markdownit: {
     preset: "default",
