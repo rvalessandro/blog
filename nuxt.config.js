@@ -62,6 +62,14 @@ export default {
     "@nuxtjs/markdownit",
     "nuxt-compress"
   ],
+  "nuxt-compress": {
+    gzip: {
+      cache: true
+    },
+    brotli: {
+      threshold: 10240
+    }
+  },
   markdownit: {
     preset: "default",
     linkify: true,
