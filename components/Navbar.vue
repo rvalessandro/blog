@@ -158,7 +158,7 @@ export default {
 #navbar * {
   font-family: Poppins;
 
-  #mobile * {
+  #mobile > * {
     -webkit-tap-highlight-color: transparent;
   }
 
