@@ -43,7 +43,10 @@
       </ul>
     </div>
 
-    <div class="flex md:hidden items-center justify-between h-full w-full">
+    <div
+      id="mobile"
+      class="flex md:hidden items-center justify-between h-full w-full"
+    >
       <nuxt-link to="/" class="mt-1">
         <img src="../assets/svg/icons8-home.svg" style="width: 2.5rem" />
       </nuxt-link>
@@ -154,6 +157,10 @@ export default {
 <style lang="scss" scoped>
 #navbar * {
   font-family: Poppins;
+
+  #mobile * {
+    -webkit-tap-highlight-color: transparent;
+  }
 
   #links {
     display: flex;
