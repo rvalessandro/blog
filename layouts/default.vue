@@ -28,6 +28,7 @@ body {
 * {
   font-family: Lato;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 h1,
