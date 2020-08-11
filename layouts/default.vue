@@ -15,7 +15,7 @@ import Footer from "../components/Footer";
 export default {};
 </script>
 
-<style>
+<style lang="scss">
 html,
 body {
   overflow-x: hidden;
@@ -28,7 +28,12 @@ body {
 * {
   font-family: Lato;
   box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent !important;
+
+  /* Tap highlight color */
+  -webkit-touch-callout: none; /* prevent callout to copy image, etc when tap to hold */
+  -webkit-text-size-adjust: none; /* prevent webkit from resizing text to fit */
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
 }
 
 h1,

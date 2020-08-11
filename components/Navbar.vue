@@ -158,8 +158,20 @@ export default {
 #navbar * {
   font-family: Poppins;
 
-  #mobile > * {
-    -webkit-tap-highlight-color: transparent;
+  #mobile {
+    a,
+    button {
+      // Tap highlight color
+      -webkit-touch-callout: none; /* prevent callout to copy image, etc when tap to hold */
+      -webkit-text-size-adjust: none; /* prevent webkit from resizing text to fit */
+      -webkit-tap-highlight-color: rgba(
+        0,
+        0,
+        0,
+        0
+      ); /* prevent tap highlight color / shadow */
+      -webkit-user-select: none;
+    }
   }
 
   #links {
