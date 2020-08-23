@@ -3,14 +3,14 @@ export default {
    ** Nuxt rendering mode
    ** See https://nuxtjs.org/api/configuration-mode
    */
-  mode: "spa",
+  mode: "universal",
   /*
    ** Nuxt target
    ** See https://nuxtjs.org/api/configuration-target
    */
   target: "server",
   server: {
-    port: 3001
+    port: 3001,
   },
   /*
    ** Headers of the page
@@ -24,16 +24,16 @@ export default {
       {
         hid: "description",
         name: "description",
-        content: process.env.npm_package_description || ""
-      }
+        content: process.env.npm_package_description || "",
+      },
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css?family=Lato|Poppins"
-      }
-    ]
+        href: "https://fonts.googleapis.com/css?family=Lato|Poppins",
+      },
+    ],
   },
   /*
    ** Global CSS
@@ -54,7 +54,7 @@ export default {
    */
   buildModules: [
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
-    "@nuxtjs/tailwindcss"
+    "@nuxtjs/tailwindcss",
   ],
   /*
    ** Nuxt.js modules
@@ -63,32 +63,32 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     "@nuxtjs/axios",
     "@nuxtjs/markdownit",
-    "nuxt-compress"
+    "nuxt-compress",
   ],
   "nuxt-compress": {
     gzip: {
-      cache: true
+      cache: true,
     },
     brotli: {
-      threshold: 10240
-    }
+      threshold: 10240,
+    },
   },
   markdownit: {
     preset: "default",
     linkify: true,
     breaks: true,
-    injected: true
+    injected: true,
   },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: "https://blog-api.rvalessandro.com"
+    baseURL: "https://blog-api.rvalessandro.com",
   },
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
    */
-  build: {}
+  build: {},
 };
