@@ -1,7 +1,7 @@
 <template>
   <nav
     id="navbar"
-    class="h-16 px-8 md:px-0 mb-4 fixed bg-white w-screen pb-2 pt-1 shadow-md"
+    class="h-16 px-8 md:px-0 mb-4 fixed bg-white w-screen pb-2 pt-1 shadow"
   >
     <div
       id="non-mobile"
