@@ -40,7 +40,6 @@ export default {
   }),
 
   async created() {
-    window.scrollTo(0, 0);
     await this.fetchArticle(this.$route.params.id);
   },
 

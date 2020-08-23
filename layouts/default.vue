@@ -27,6 +27,7 @@ body {
 
 * {
   font-family: Lato;
+  font-display: swap;
   box-sizing: border-box;
 
   /* Tap highlight color */

@@ -19,21 +19,22 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from "vuex";
 import Book from "../../components/Book";
 
 export default {
-  computed: {
-    ...mapGetters(["bookCategories"])
-  },
+  data: () => ({
+    bookCategories: []
+  }),
 
   created() {
-    window.scrollTo(0, 0);
     this.fetchBookCategories();
   },
 
   methods: {
-    ...mapActions(["fetchBookCategories"])
+    async fetchBookCategories() {
+      const res = await this.$axios.get("/book-categories");
+      this.bookCategories = res.data;
+    }
   }
 };
 </script>

@@ -1,6 +1,11 @@
 <template>
   <div class="flex flex-col md:flex-col">
-    <div id="articles" class="flex flex-col mx-auto" style="max-width: 44rem;">
+    <div
+      v-if="articles"
+      id="articles"
+      class="flex flex-col mx-auto"
+      style="max-width: 44rem;"
+    >
       <div v-for="article in articles" :key="article.id" class="mb-8 md:mb-4">
         <h1
           id="article-title"
@@ -60,16 +65,15 @@
 export default {
   data: () => ({
     activeCat: "All",
-    articles: [],
-    categories: [],
+    articles: null,
+    categories: null,
   }),
 
   async created() {
-    window.scrollTo(0, 0);
-    if (this.articles.length < 1) {
+    if (!this.articles || this.articles.length < 1) {
       this.fetchArticles();
     }
-    if (this.categories.length < 1) {
+    if (!this.categories || this.categories.length < 1) {
       this.fetchCategories();
     }
   },
