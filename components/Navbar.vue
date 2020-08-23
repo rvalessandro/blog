@@ -1,14 +1,14 @@
 <template>
   <nav
     id="navbar"
-    class="h-16 container px-8 md:px-0 mx-auto mb-4"
-    style="max-width: 44rem;"
+    class="h-16 px-8 md:px-0 mb-4 fixed bg-white w-screen w-screen"
   >
     <div
       id="non-mobile"
-      class="hidden md:flex justify-between items-center h-full w-full"
+      class="hidden md:flex justify-between items-center h-full w-full mx-auto "
+      style="max-width: 44rem;"
     >
-      <nuxt-link to="/" class="mt-1">
+      <nuxt-link to="/" class="mt-1 md:ml-0 -ml-4">
         <img src="../assets/svg/icons8-home.svg" style="width: 2.5rem" />
       </nuxt-link>
 

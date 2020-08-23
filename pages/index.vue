@@ -75,6 +75,7 @@ export default {
   },
 
   async created() {
+    window.scrollTo(0, 0);
     if (!this.articles || this.articles.length < 1) {
       this.fetchArticles();
     }
