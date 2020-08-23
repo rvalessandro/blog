@@ -34,10 +34,16 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   data: () => ({
     article: null,
   }),
+
+  computed: {
+    ...mapGetters(["articles"]),
+  },
 
   async created() {
     await this.fetchArticle(this.$route.params.id);
@@ -46,6 +52,15 @@ export default {
   methods: {
     // Data fetching
     async fetchArticle(id) {
+      if (this.articles) {
+        for (let i = 0; i < this.articles.length; i++) {
+          if (this.articles[i].id == id) {
+            this.article = this.articles[i];
+            return;
+          }
+        }
+      }
+
       const res = await this.$axios.get(`/articles/${id}`);
       this.article = res.data;
     },

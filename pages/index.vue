@@ -62,12 +62,17 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from "vuex";
+
 export default {
   data: () => ({
     activeCat: "All",
-    articles: null,
     categories: null,
   }),
+
+  computed: {
+    ...mapGetters(["articles"]),
+  },
 
   async created() {
     if (!this.articles || this.articles.length < 1) {
@@ -79,10 +84,12 @@ export default {
   },
 
   methods: {
+    ...mapActions(["storeArticles"]),
+
     // Data Fetching
     async fetchArticles() {
       const res = await this.$axios.get("/articles?_sort=id:DESC");
-      this.articles = res.data;
+      this.storeArticles(res.data);
     },
     async fetchCategories() {
       const res = await this.$axios.get("/categories");
