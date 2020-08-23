@@ -1,11 +1,7 @@
 <template>
   <div class="flex flex-col md:flex-col">
-    <div id="articles" class="flex flex-col mx-auto" style="max-width: 44rem">
-      <div
-        v-for="article in displayedArticles"
-        :key="article.id"
-        class="mb-8 md:mb-4"
-      >
+    <div id="articles" class="flex flex-col mx-auto" style="max-width: 44rem;">
+      <div v-for="article in articles" :key="article.id" class="mb-8 md:mb-4">
         <h1
           id="article-title"
           class="text-xl text-gray-800 font-semibold leading-normal mb-3 cursor-pointer transition-all ease-in duration-75 hover:underline"
@@ -18,7 +14,7 @@
           <div
             id="left-column"
             class="w-full flex md:w-64 md:flex-col"
-            style="min-width: 14rem"
+            style="min-width: 14rem;"
           >
             <div class="flex flex-wrap w-full">
               <div
@@ -37,7 +33,7 @@
 
             <span
               class="text-sm text-gray-600 w-32"
-              style="margin-top: .125rem"
+              style="margin-top: 0.125rem;"
             >
               {{ formatDate(article.created_at) }}
             </span>
@@ -61,47 +57,48 @@
 </template>
 
 <script>
-import { mapActions, mapGetters, mapMutations } from "vuex";
-
 export default {
   data: () => ({
-    activeCat: "All"
+    activeCat: "All",
+    articles: [],
+    categories: [],
   }),
-  computed: {
-    ...mapGetters(["allArticles", "displayedArticles", "categories"])
-  },
+
   async created() {
-    if (this.allArticles.length < 1) {
-      this.fetchAllArticles();
+    window.scrollTo(0, 0);
+    if (this.articles.length < 1) {
+      this.fetchArticles();
     }
     if (this.categories.length < 1) {
       this.fetchCategories();
     }
   },
+
   methods: {
-    ...mapActions(["fetchAllArticles", "fetchCategories", "filterByCategory"]),
-    ...mapMutations(["setDisplayedArticles"]),
-    async filter(categoryName) {
-      this.activeCat = categoryName;
-      try {
-        await this.filterByCategory(categoryName);
-      } catch (err) {
-        console.log(err);
-      }
+    // Data Fetching
+    async fetchArticles() {
+      const res = await this.$axios.get("/articles?_sort=id:DESC");
+      this.articles = res.data;
     },
-    goToDetail(article) {
-      this.$router.push(`/articles/${article.id}`);
+    async fetchCategories() {
+      const res = await this.$axios.get("/categories");
+      this.categories = res.data;
     },
 
+    // Action methods
+    goToDetail({ id }) {
+      this.$router.push(`/articles/${id}`);
+    },
+
+    // Helper methods
     formatDate(date) {
       const d = new Date(date);
       const ye = new Intl.DateTimeFormat("en", { year: "numeric" }).format(d);
       const mo = new Intl.DateTimeFormat("en", { month: "short" }).format(d);
       const da = new Intl.DateTimeFormat("en", { day: "2-digit" }).format(d);
-
       return `${mo} ${da}, ${ye}`;
-    }
-  }
+    },
+  },
 };
 </script>
 

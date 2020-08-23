@@ -1,9 +1,9 @@
 <template>
-  <div class="container mx-auto -mb-5" style="max-width: 44rem">
+  <div class="container mx-auto -mb-5" style="max-width: 44rem;">
     <div v-if="article">
       <h1
         id="title"
-        class="text-xl text-gray-800 font-semibold leading-normal mb-3 "
+        class="text-xl text-gray-800 font-semibold leading-normal mb-3"
       >
         {{ article.title }}
       </h1>
@@ -23,7 +23,7 @@
             </span>
           </div>
         </div>
-        <span class="text-sm text-gray-600 w-32" style="margin-top: .125rem">
+        <span class="text-sm text-gray-600 w-32" style="margin-top: 0.125rem;">
           {{ formatDate(article.created_at) }}
         </span>
       </div>
@@ -34,21 +34,24 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
-
 export default {
   data: () => ({
-    article: null
+    article: null,
   }),
-  mounted() {
-    window.scrollTo(0, 0);
-  },
+
   async created() {
+    window.scrollTo(0, 0);
     await this.fetchArticle(this.$route.params.id);
-    this.article = this.$store.getters["article"];
   },
+
   methods: {
-    ...mapActions(["fetchArticle"]),
+    // Data fetching
+    async fetchArticle(id) {
+      const res = await this.$axios.get(`/articles/${id}`);
+      this.article = res.data;
+    },
+
+    // Helper methods
     formatDate(date) {
       const d = new Date(date);
       const ye = new Intl.DateTimeFormat("en", { year: "numeric" }).format(d);
@@ -56,7 +59,7 @@ export default {
       const da = new Intl.DateTimeFormat("en", { day: "2-digit" }).format(d);
 
       return `${mo} ${da}, ${ye}`;
-    }
-  }
+    },
+  },
 };
 </script>

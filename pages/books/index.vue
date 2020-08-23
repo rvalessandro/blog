@@ -26,9 +26,12 @@ export default {
   computed: {
     ...mapGetters(["bookCategories"])
   },
+
   created() {
+    window.scrollTo(0, 0);
     this.fetchBookCategories();
   },
+
   methods: {
     ...mapActions(["fetchBookCategories"])
   }
