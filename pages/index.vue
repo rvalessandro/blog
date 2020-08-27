@@ -3,7 +3,7 @@
     <Loading :active.sync="isLoading" :is-full-page="fullPage" id="loading" />
 
     <div
-      v-if="articles"
+      v-show="articles"
       id="articles"
       class="flex flex-col mx-auto"
       style="max-width: 44rem;"
