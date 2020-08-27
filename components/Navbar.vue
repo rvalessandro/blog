@@ -5,7 +5,7 @@
       class="hidden md:flex justify-between items-center h-full w-full mx-auto "
       style="max-width: 44rem;"
     >
-      <nuxt-link to="/" class="mt-1 md:ml-0 -ml-4">
+      <nuxt-link to="/" class="mt-1 -ml-4 md:-ml-1 xl:-ml-4">
         <img src="../assets/svg/icons8-home.svg" style="width: 2.5rem" />
       </nuxt-link>
 
