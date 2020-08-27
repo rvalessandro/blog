@@ -1,5 +1,7 @@
 <template>
   <div class="container mx-auto" style="max-width: 44rem">
+    <Loading :active.sync="isLoading" :is-full-page="fullPage" id="loading" />
+
     <div v-for="category in bookCategories" :key="category.id" id="category">
       <h1
         class="text-gray-800 text-2xl pb-1 mb-6 ml-1 border-b-2 border-gray-500"
@@ -19,15 +21,24 @@
 </template>
 
 <script>
+import Loading from "vue-loading-overlay";
 import Book from "../../components/Book";
 
 export default {
   data: () => ({
-    bookCategories: []
-  }),
+    bookCategories: [],
 
-  created() {
-    this.fetchBookCategories();
+    isLoading: false,
+    fullPage: true
+  }),
+  components: {
+    Loading
+  },
+
+  async created() {
+    this.isLoading = true;
+    await this.fetchBookCategories();
+    this.isLoading = false;
   },
 
   methods: {
@@ -39,7 +50,18 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+#loading {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  position: fixed;
+  left: 0;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+}
+
 #category {
   margin-bottom: 1.5rem;
 }
