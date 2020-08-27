@@ -70,7 +70,6 @@ import { mapGetters, mapActions } from "vuex";
 export default {
   data: () => ({
     activeCat: "All",
-    categories: null,
 
     isLoading: false,
     fullPage: true
@@ -89,9 +88,6 @@ export default {
     if (!this.articles || this.articles.length < 1) {
       await this.fetchArticles();
     }
-    if (!this.categories || this.categories.length < 1) {
-      this.fetchCategories();
-    }
     this.isLoading = false;
   },
 
@@ -102,10 +98,6 @@ export default {
     async fetchArticles() {
       const res = await this.$axios.get("/articles?_sort=id:DESC");
       this.storeArticles(res.data);
-    },
-    async fetchCategories() {
-      const res = await this.$axios.get("/categories");
-      this.categories = res.data;
     },
 
     // Action methods
