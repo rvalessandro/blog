@@ -1,5 +1,7 @@
 <template>
   <div class="flex flex-col md:flex-col">
+    <Loading :active.sync="isLoading" :is-full-page="fullPage" id="loading" />
+
     <div
       v-if="articles"
       id="articles"
@@ -62,26 +64,35 @@
 </template>
 
 <script>
+import Loading from "vue-loading-overlay";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
   data: () => ({
     activeCat: "All",
     categories: null,
+
+    isLoading: false,
+    fullPage: true
   }),
+  components: {
+    Loading
+  },
 
   computed: {
-    ...mapGetters(["articles"]),
+    ...mapGetters(["articles"])
   },
 
   async created() {
-    window.scrollTo(0, 0);
+    this.isLoading = true;
+    // window.scrollTo(0, 0);
     if (!this.articles || this.articles.length < 1) {
-      this.fetchArticles();
+      await this.fetchArticles();
     }
     if (!this.categories || this.categories.length < 1) {
       this.fetchCategories();
     }
+    this.isLoading = false;
   },
 
   methods: {
@@ -109,12 +120,23 @@ export default {
       const mo = new Intl.DateTimeFormat("en", { month: "short" }).format(d);
       const da = new Intl.DateTimeFormat("en", { day: "2-digit" }).format(d);
       return `${mo} ${da}, ${ye}`;
-    },
-  },
+    }
+  }
 };
 </script>
 
 <style lang="scss">
+#loading {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  position: fixed;
+  left: 0;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+}
+
 #articles {
   & > *:last-child {
     margin-bottom: 0;
