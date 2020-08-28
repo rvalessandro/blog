@@ -84,7 +84,6 @@ export default {
 
   async created() {
     this.isLoading = true;
-    // window.scrollTo(0, 0);
     if (!this.articles || this.articles.length < 1) {
       await this.fetchArticles();
     }
