@@ -11,7 +11,7 @@
     <div id="details" class="flex flex-col md:flex-row">
       <div
         id="left-column"
-        class="w-full flex md:w-64 md:flex-col"
+        class="w-full flex md:w-64 md:flex-col justify-between"
         style="min-width: 14rem;"
       >
         <div class="flex flex-wrap w-full">
