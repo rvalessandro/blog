@@ -4,13 +4,16 @@
     class="h-16 px-8 md:px-0 mb-3 w-screen pt-1 container mx-auto"
   >
     <div class="flex items-center justify-between h-full w-full pt-2">
-      <button
-        @click="$router.go(-1)"
-        id="back-btn"
-        class="uppercase text-sm font-regular text-gray-800 tracking-widest py-1 px-3 -ml-3"
-      >
-        back
-      </button>
+      <div>
+        <button
+          v-if="$route.path !== '/'"
+          @click="$router.go(-1)"
+          id="back-btn"
+          class="uppercase text-sm font-regular text-gray-800 tracking-widest py-1 px-3 -ml-3"
+        >
+          back
+        </button>
+      </div>
       <div>
         <button
           @click="goTo('/')"
