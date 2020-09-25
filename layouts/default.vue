@@ -39,6 +39,10 @@ body {
   -webkit-user-select: none;
 }
 
+.container {
+  max-width: 44rem !important;
+}
+
 h1,
 h2,
 h3,
