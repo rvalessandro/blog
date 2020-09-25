@@ -3,7 +3,7 @@
     <div v-if="article">
       <h1
         id="title"
-        class="text-xl text-gray-800 font-semibold leading-normal mb-3"
+        class="text-xl text-gray-900 font-semibold leading-normal mb-3"
       >
         {{ article.title }}
       </h1>
@@ -16,8 +16,7 @@
             class="mb-6 mr-4"
           >
             <span
-              class="text-sm text-gray-700 pb-2 border-b-2"
-              style="border-color: #14213d;"
+              class="text-sm text-gray-700 pb-2 px-2 border-b-2 border-blue-500"
             >
               {{ category.name }}
             </span>
@@ -38,11 +37,11 @@ import { mapGetters } from "vuex";
 
 export default {
   data: () => ({
-    article: null,
+    article: null
   }),
 
   computed: {
-    ...mapGetters(["articles"]),
+    ...mapGetters(["articles"])
   },
 
   async created() {
@@ -74,7 +73,7 @@ export default {
       const da = new Intl.DateTimeFormat("en", { day: "2-digit" }).format(d);
 
       return `${mo} ${da}, ${ye}`;
-    },
-  },
+    }
+  }
 };
 </script>

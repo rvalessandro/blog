@@ -1,5 +1,5 @@
 <template>
-  <div id="footer" class="container mx-auto">
+  <div id="footer" class="container mx-auto -mt-1">
     <div id="links">
       <a href="https://linkedin.com/in/rvalessandro">
         <img src="../assets/svg/icons8-linkedin-2.svg" alt="LinkedIn" />
@@ -11,8 +11,8 @@
         <img src="../assets/svg/icons8-gitlab.svg" alt="Gitlab" />
       </a>
     </div>
-    <div id="credits" class="mt-2 text-center text-gray-600">
-      <span>Raffi Verrel Alessandro - 2020</span>
+    <div id="credits" class="mt-2 text-center text-gray-600 text-xs">
+      <span> &#169; 2020 - Raffi Verrel Alessandro</span>
     </div>
   </div>
 </template>
