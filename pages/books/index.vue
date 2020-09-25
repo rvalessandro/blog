@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto" style="max-width: 44rem">
+  <div class="container mx-auto" style="max-width: 52rem">
     <Loading :active.sync="isLoading" :is-full-page="fullPage" id="loading" />
 
     <div v-for="category in bookCategories" :key="category.id" id="category">

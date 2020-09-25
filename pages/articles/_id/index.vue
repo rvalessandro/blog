@@ -1,6 +1,9 @@
 <template>
-  <div class="container mx-auto -mb-5" style="max-width: 44rem;">
-    <div v-if="article">
+  <div
+    class="container mx-auto -mb-5 md:bg-white md:shadow-lg rounded"
+    style="max-width: 52rem;"
+  >
+    <div v-if="article" class="md:p-8 md:px-12">
       <h1
         id="title"
         class="text-xl text-gray-900 font-semibold leading-normal mb-3"

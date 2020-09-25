@@ -6,7 +6,7 @@
       v-show="articles"
       id="articles"
       class="flex flex-col mx-auto"
-      style="max-width: 44rem;"
+      style="max-width: 52rem;"
     >
       <div v-for="article in articles" :key="article.id" class="mb-8 md:mb-4">
         <ArticlePreview :article="article" />

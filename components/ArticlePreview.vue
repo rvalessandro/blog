@@ -1,5 +1,5 @@
 <template>
-  <div v-show="article">
+  <div v-show="article" class="bg-white shadow-lg p-8 md:p-8 rounded mb-2">
     <h1
       id="article-title"
       class="text-xl text-gray-900 font-semibold leading-normal mb-3 cursor-pointer transition-all ease-in duration-75 hover:underline"
