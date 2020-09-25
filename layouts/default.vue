@@ -47,6 +47,10 @@ h5.h6 {
   font-family: Poppins;
 }
 
+button:focus {
+  outline: 0 !important;
+}
+
 .fade-enter-active,
 .fade-leave-active {
   transition-duration: 0.3s;
