@@ -39,6 +39,10 @@ body {
   -webkit-user-select: none;
 }
 
+#loading {
+  background-color: #edf2f7;
+}
+
 .container {
   max-width: 52rem !important;
 }
