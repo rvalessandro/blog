@@ -1,54 +1,22 @@
 <template>
-  <nav id="navbar" class="h-16 px-8 md:px-0 mb-3 w-screen pt-1">
+  <nav id="navbar" class="h-16 px-8 md:px-0 mb-3 w-screen pt-1 container">
     <div
-      id="non-mobile"
-      class="hidden md:flex justify-between items-center h-full w-full mx-auto "
-      style="max-width: 44rem;"
-    >
-      <nuxt-link to="/" class="mt-1 -ml-4 md:-ml-1 xl:-ml-4">
-        <img src="../assets/svg/icons8-home.svg" style="width: 2.5rem" />
-      </nuxt-link>
-
-      <ul class="flex">
-        <button
-          @click="goTo('/')"
-          class="mx-2 px-2 uppercase text-sm font-regular text-gray-800 tracking-wide"
-          :class="{
-            'text-gray-700 border-b-2 border-gray-700': activePage == 1
-          }"
-        >
-          blog
-        </button>
-        <button
-          @click="goTo('/books')"
-          class="mx-2 px-2 uppercase text-sm font-regular text-gray-800 tracking-wide"
-          :class="{
-            'text-gray-700 border-b-2 border-gray-700': activePage == 2
-          }"
-        >
-          books
-        </button>
-      </ul>
-    </div>
-
-    <div
-      id="mobile"
-      class="flex items-center justify-end -mr-4 md:hidden h-full w-full pt-2"
+      class="flex items-center justify-end h-full w-full pt-2"
     >
         <button
           @click="goTo('/')"
           class="uppercase text-sm font-regular text-gray-800 tracking-widest px-2 py-1 mx-4"
           :class="{
-            'text-gray-900 border-b-2 border-blue-500': activePage == 1
+            'text-gray-900 border-b-2 border-blue-600': activePage == 1
           }"
         >
           blog
         </button>
         <button
           @click="goTo('/books')"
-          class="uppercase text-sm font-regular text-gray-800 tracking-widest px-2 py-1"
+          class="uppercase text-sm font-regular text-gray-800 tracking-widest px-2 py-1 mx-4 mr-0 pr-0"
           :class="{
-            'text-gray-900 border-b-2 border-gray-700': activePage == 2
+            'text-gray-900 border-b-2 border-blue-600': activePage == 2
           }"
         >books
         </button>
