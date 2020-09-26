@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-200">
+  <div class="bg-gray-100">
     <Navbar />
     <transition name="fade" mode="out-in">
       <Nuxt class="container mx-auto px-8 sm:px-0 py-2 lg:py-6" />
