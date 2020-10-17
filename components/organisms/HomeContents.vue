@@ -4,16 +4,17 @@
     <div v-show="articles">
       <h1
         id="section-title"
-        class="text-4xl font-extrabold border-b-4 border-black inline"
+        class="text-4xl text-gray-500 font-extrabold border-b-4 border-black inline"
       >
         Articles
       </h1>
-      <div class="mt-6 md:mt-10">
+      <div class="mt-8 md:mt-10">
         <div
           v-for="(article, i) in articles"
           :key="article.id"
           :class="{
-            'mb-10 pb-10 border-b-2 border-gray-800': i !== articles.length - 1
+            'mb-10 pb-10 border-b-2 border-gray-800': i !== articles.length - 1,
+            'mb-4': i === articles.length - 1
           }"
         >
           <ArticlePreview :article="article" class="-mt-1" />

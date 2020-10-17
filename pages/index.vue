@@ -10,6 +10,7 @@ import HomeContents from "../components/organisms/HomeContents";
 import Hero from "../components/organisms/Hero";
 
 export default {
+  scrollToTop: true,
   data: () => ({
     isLoading: false,
     fullPage: true

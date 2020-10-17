@@ -2,7 +2,7 @@
   <div>
     <h1
       id="article-title"
-      class="text-xl text-gray-900 font-semibold leading-normal mb-3 cursor-pointer transition-all ease-in duration-75 hover:underline"
+      class="text-2xl text-gray-900 font-semibold leading-normal mb-3 cursor-pointer transition-all ease-in duration-75 hover:underline"
       @click="goToDetail(article)"
     >
       {{ article.title }}

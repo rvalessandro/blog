@@ -81,15 +81,12 @@ button:focus {
 .content {
   p {
     margin-bottom: 1.25rem !important;
-    line-height: 2rem;
-    font-size: 0.875rem;
-    color: #2d3748;
+    line-height: 2.125rem;
   }
 
   ul {
     margin-bottom: 1.25rem;
     margin-left: 1.25rem;
-    font-size: 0.875rem;
   }
 
   li {
@@ -104,12 +101,8 @@ button:focus {
   }
 }
 @media screen and (min-width: 768px) {
-  .content p {
-    font-size: 1rem;
-  }
   .content ul {
     margin-left: 1.5rem;
-    font-size: 1rem;
   }
 }
 </style>
