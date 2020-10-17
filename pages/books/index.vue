@@ -1,7 +1,5 @@
 <template>
   <div class="container mx-auto" style="max-width: 52rem">
-    <Loading :active.sync="isLoading" :is-full-page="fullPage" id="loading" />
-
     <div v-for="category in bookCategories" :key="category.id" id="category">
       <h1
         class="text-gray-800 text-2xl pb-1 mb-6 ml-1 border-b-2 border-gray-500"
@@ -21,7 +19,6 @@
 </template>
 
 <script>
-import Loading from "vue-loading-overlay";
 import Book from "../../components/Book";
 
 export default {

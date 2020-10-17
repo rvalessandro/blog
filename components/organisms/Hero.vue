@@ -4,7 +4,7 @@
       <div>
         <h1
           id="name"
-          class="font-bold text-6xl tracking-wide border-black text-center"
+          class="font-extrabold text-6xl tracking-wide border-black text-center"
           style="border-bottom-width: .8rem; line-height: 1.2; "
         >
           rvalessandro
@@ -12,7 +12,7 @@
       </div>
       <div class="mt-6">
         <p id="headline" class="text-4xl text-center">
-          Aspiring Software Engineer
+          Aspiring <span id="grad">Software Engineer</span>
         </p>
         <div id="links" class="flex items-center justify-center mt-4 text-xl">
           <span class="link cursor-pointer px-1" @click="goTo('linkedin')"

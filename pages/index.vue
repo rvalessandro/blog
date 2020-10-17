@@ -6,43 +6,14 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
-import Loading from "vue-loading-overlay";
 import HomeContents from "../components/organisms/HomeContents";
 import Hero from "../components/organisms/Hero";
 
 export default {
   data: () => ({
-    activeCat: "All",
-
     isLoading: false,
     fullPage: true
-  }),
-  components: {
-    Loading
-  },
-
-  computed: {
-    ...mapGetters(["articles"])
-  },
-
-  async created() {
-    this.isLoading = true;
-    if (!this.articles || this.articles.length < 1) {
-      await this.fetchArticles();
-    }
-    this.isLoading = false;
-  },
-
-  methods: {
-    ...mapActions(["storeArticles"]),
-
-    // Data Fetching
-    async fetchArticles() {
-      const res = await this.$axios.get("/articles?_sort=id:DESC");
-      this.storeArticles(res.data);
-    }
-  }
+  })
 };
 </script>
 
