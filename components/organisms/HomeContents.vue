@@ -1,5 +1,5 @@
 <template>
-  <div class="container my-8">
+  <div class="container mt-8 ">
     <!-- ARTICLES -->
     <div v-show="articles">
       <h1
@@ -8,14 +8,15 @@
       >
         Articles
       </h1>
-      <div class="mt-10">
+      <div class="mt-6 md:mt-10">
         <div
           v-for="(article, i) in articles"
           :key="article.id"
-          class="mb-10 pb-10"
-          :class="{ 'border-b-2 border-gray-800': i !== articles.length - 1 }"
+          :class="{
+            'mb-10 pb-10 border-b-2 border-gray-800': i !== articles.length - 1
+          }"
         >
-          <ArticlePreview :article="article" />
+          <ArticlePreview :article="article" class="-mt-1" />
         </div>
       </div>
     </div>

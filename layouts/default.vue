@@ -4,7 +4,7 @@
     <transition name="fade" mode="out-in">
       <Nuxt class="container mx-auto" />
     </transition>
-    <!-- <Footer /> -->
+    <Footer />
   </div>
 </template>
 
@@ -41,6 +41,12 @@ body {
 
 .container {
   max-width: 52rem !important;
+  padding: 0 1rem;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 0;
+  }
 }
 
 h1,

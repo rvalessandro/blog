@@ -10,7 +10,7 @@
 
     <div id="preview" class="w-full text-gray-600 mt-1 sm:mt-0">
       <div class="content" v-html="$md.render(article.preview)"></div>
-      <div class="flex justify-between">
+      <div class="flex justify-between items-center">
         <button
           class="bg-black text-white hover:bg-white hover:text-black border border-black px-8 py-2 rounded transition duration-200 ease-in-out"
           @click="goToDetail(article)"

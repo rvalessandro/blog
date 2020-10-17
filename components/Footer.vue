@@ -1,17 +1,6 @@
 <template>
   <div id="footer" class="container mx-auto -mt-1">
-    <div id="links">
-      <a href="https://linkedin.com/in/rvalessandro">
-        <img src="../assets/svg/icons8-linkedin-2.svg" alt="LinkedIn" />
-      </a>
-      <a href="https://github.com/rvalessandro">
-        <img src="../assets/svg/icons8-github.svg" alt="Github" />
-      </a>
-      <a href="https://gitlab.com/rvalessandro">
-        <img src="../assets/svg/icons8-gitlab.svg" alt="Gitlab" />
-      </a>
-    </div>
-    <div id="credits" class="mt-2 text-center text-gray-600 text-xs">
+    <div id="credits" class="mt-2 text-center text-gray-700  text-xs">
       <span> &#169; 2020 - Raffi Verrel Alessandro</span>
     </div>
   </div>
