@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-100">
+  <div>
     <Navbar />
     <transition name="fade" mode="out-in">
       <Nuxt class="container mx-auto px-8 sm:px-0 py-2 lg:py-6" />
@@ -37,10 +37,6 @@ body {
   -webkit-text-size-adjust: none; /* prevent webkit from resizing text to fit */
   -webkit-tap-highlight-color: transparent;
   -webkit-user-select: none;
-}
-
-#loading {
-  background-color: #edf2f7;
 }
 
 .container {
