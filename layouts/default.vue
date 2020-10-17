@@ -1,10 +1,10 @@
 <template>
   <div>
-    <Navbar />
+    <!-- <Navbar /> -->
     <transition name="fade" mode="out-in">
-      <Nuxt class="container mx-auto px-8 sm:px-0 py-2 lg:py-6" />
+      <Nuxt class="container mx-auto" />
     </transition>
-    <Footer />
+    <!-- <Footer /> -->
   </div>
 </template>
 
@@ -28,7 +28,7 @@ body {
 }
 
 * {
-  font-family: Lato;
+  font-family: "Inter", sans-serif;
   font-display: swap;
   box-sizing: border-box;
 
@@ -57,7 +57,7 @@ button:focus {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition-duration: 0.3s;
+  transition-duration: 0.2s;
   transition-property: opacity;
   transition-timing-function: ease;
 }

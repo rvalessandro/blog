@@ -1,24 +1,15 @@
 <template>
   <div class="flex flex-col md:flex-col">
-    <Loading :active.sync="isLoading" :is-full-page="fullPage" id="loading" />
-
-    <div
-      v-show="articles"
-      id="articles"
-      class="flex flex-col mx-auto"
-      style="max-width: 52rem;"
-    >
-      <div v-for="article in articles" :key="article.id" class="mb-8 md:mb-4">
-        <ArticlePreview :article="article" />
-      </div>
-    </div>
+    <Hero />
+    <HomeContents />
   </div>
 </template>
 
 <script>
 import { mapGetters, mapActions } from "vuex";
 import Loading from "vue-loading-overlay";
-import ArticlePreview from "../components/ArticlePreview";
+import HomeContents from "../components/organisms/HomeContents";
+import Hero from "../components/organisms/Hero";
 
 export default {
   data: () => ({
