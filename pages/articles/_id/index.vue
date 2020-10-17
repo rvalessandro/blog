@@ -1,6 +1,6 @@
 <template>
   <div class="container mx-auto mt-6 md:mt-0 -mb-8">
-    <div v-if="article" class="md:p-8 md:pb-0 md:px-12">
+    <div v-if="article" class="container md:p-8 md:pb-0 md:px-12">
       <button
         id="backBtn"
         class="p-2 hover:border-4 transition duration-200 ease-in-out mb-3 md:mb-4 flex items-center"
