@@ -28,7 +28,10 @@
         </span>
       </div>
 
-      <div class="content mt-1" v-html="$md.render(article.content)"></div>
+      <div
+        class="content mt-1 text-gray-800"
+        v-html="$md.render(article.content)"
+      ></div>
     </div>
   </div>
 </template>

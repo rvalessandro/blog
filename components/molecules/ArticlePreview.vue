@@ -8,7 +8,7 @@
       {{ article.title }}
     </h1>
 
-    <div id="preview" class="w-full text-gray-600 mt-1 sm:mt-0">
+    <div id="preview" class="w-full text-gray-800 mt-1 sm:mt-0">
       <div class="content" v-html="$md.render(article.preview)"></div>
       <div class="flex justify-between items-center">
         <button
