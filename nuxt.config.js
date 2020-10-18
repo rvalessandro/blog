@@ -97,6 +97,13 @@ export default {
   /**
    * PWA STUFF
    */
+  manifest: {
+    name: "Raffi Verrel Alessandro",
+    icons: [{ source: "./static/icon.png" }],
+    short_name: "rvalessandro",
+    description: "rvalessandro's personal website",
+    start_url: "https://rvalessandro.com/"
+  },
   pwa: {
     manifest: {
       name: "Raffi Verrel Alessandro",
