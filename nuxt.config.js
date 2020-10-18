@@ -24,7 +24,8 @@ export default {
       {
         hid: "description",
         name: "description",
-        content: "Raffi Verrel Alessandro. A student, a learner, and an aspiring tech leader."
+        content:
+          "Raffi Verrel Alessandro. A student, a learner, and an aspiring tech leader."
       }
     ],
     link: [
@@ -103,6 +104,7 @@ export default {
       short_name: "rvalessandro",
       description: "rvalessandro's personal website"
     },
+    meta: { theme_color: "#fff" },
     workbox: {
       dev: true,
       runtimeCaching: [
