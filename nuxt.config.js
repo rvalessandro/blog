@@ -98,9 +98,9 @@ export default {
    * PWA STUFF
    */
   pwa: {
-    icon: false,
     manifest: {
       name: "Raffi Verrel Alessandro",
+      icons: [{ source: "./static/icon.png" }],
       short_name: "rvalessandro",
       description: "rvalessandro's personal website"
     },
