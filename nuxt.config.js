@@ -103,7 +103,7 @@ export default {
       icons: [{ source: "./static/icon.png" }],
       short_name: "rvalessandro",
       description: "rvalessandro's personal website",
-      start_url: "https://rvalessandro.com"
+      start_url: "https://rvalessandro.com/"
     },
     meta: { theme_color: "#fff" },
     workbox: {
