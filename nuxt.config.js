@@ -54,7 +54,8 @@ export default {
    */
   buildModules: [
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
-    "@nuxtjs/tailwindcss"
+    "@nuxtjs/tailwindcss",
+    "@nuxtjs/pwa"
   ],
   /*
    ** Nuxt.js modules
@@ -90,5 +91,28 @@ export default {
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
    */
-  build: {}
+  build: {},
+
+  /**
+   * PWA STUFF
+   */
+  pwa: {
+    icon: false,
+    manifest: {
+      name: "Raffi Verrel Alessandro",
+      short_name: "rvalessandro",
+      description: "rvalessandro's personal website"
+    },
+    workbox: {
+      dev: true,
+      runtimeCaching: [
+        {
+          urlPattern: "https://blog-api.rvalessandro.com/*",
+          strategyOptions: {
+            cacheName: "articles-cache"
+          }
+        }
+      ]
+    }
+  }
 };
