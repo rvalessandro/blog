@@ -1,5 +1,9 @@
 <template>
   <div>
+    <noscript>
+      <h1>Please enable javascript to view the site</h1>
+    </noscript>
+
     <!-- <Navbar /> -->
     <transition name="fade" mode="out-in">
       <Nuxt class="container mx-auto" />
