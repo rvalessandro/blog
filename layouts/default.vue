@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- <Navbar /> -->
     <transition name="fade" mode="out-in">
       <Nuxt class="container mx-auto" />
     </transition>
@@ -9,15 +8,12 @@
 </template>
 
 <script>
-import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 export default {};
 </script>
 
 <style lang="scss">
-@import url("https://fonts.googleapis.com/css?family=Lato|Poppins");
-
 html,
 body {
   overflow-x: hidden;
