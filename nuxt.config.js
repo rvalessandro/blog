@@ -33,6 +33,16 @@ export default {
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Inter"
+      },
+      {
+        rel: "preconnect",
+        href: "https://blog-api.rvalessandro.com",
+        crossorigin: true
+      },
+      {
+        rel: "preconnect",
+        href: "https://cdn.jsdelivr.net",
+        crossorigin: true
       }
     ],
     noscript: [{ innerHTML: "Please enable javascript to run this site." }]
