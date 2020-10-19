@@ -34,7 +34,8 @@ export default {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Inter"
       }
-    ]
+    ],
+    noscript: [{ innerHTML: "Please enable javascript to run this site." }]
   },
   /*
    ** Global CSS
