@@ -36,7 +36,7 @@ export default {
       },
       {
         rel: "preconnect",
-        href: "https://blog-api.rvalessandro.com",
+        href: "https://blog-cms.rvalessandro.com",
         crossorigin: true
       },
       {
@@ -97,7 +97,7 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: "https://blog-api.rvalessandro.com"
+    baseURL: "https://blog-cms.rvalessandro.com"
   },
   /*
    ** Build configuration
@@ -128,7 +128,7 @@ export default {
       dev: true,
       runtimeCaching: [
         {
-          urlPattern: "https://blog-api.rvalessandro.com/*",
+          urlPattern: "https://blog-cms.rvalessandro.com/*",
           strategyOptions: {
             cacheName: "articles-cache"
           }
