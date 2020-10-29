@@ -76,7 +76,8 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     "@nuxtjs/axios",
     "@nuxtjs/markdownit",
-    "nuxt-compress"
+    "nuxt-compress",
+    "nuxt-brotli"
   ],
   "nuxt-compress": {
     gzip: {
